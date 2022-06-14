@@ -1,0 +1,361 @@
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Light'), local('CeraPro-Light'),
+        url('../fonts/CeraPro-Light.woff2') format('woff2'),
+        url('../fonts/CeraPro-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Medium Italic'), local('CeraPro-MediumItalic'),
+        url('../fonts/CeraPro-MediumItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Regular Italic'), local('CeraPro-RegularItalic'),
+        url('../fonts/CeraPro-RegularItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-RegularItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Black Italic'), local('CeraPro-BlackItalic'),
+        url('../fonts/CeraPro-BlackItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-BlackItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Medium'), local('CeraPro-Medium'),
+        url('../fonts/CeraPro-Medium.woff2') format('woff2'),
+        url('../fonts/CeraPro-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Bold Italic'), local('CeraPro-BoldItalic'),
+        url('../fonts/CeraPro-BoldItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Thin Italic'), local('CeraPro-ThinItalic'),
+        url('../fonts/CeraPro-ThinItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-ThinItalic.woff') format('woff');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Light Italic'), local('CeraPro-LightItalic'),
+        url('../fonts/CeraPro-LightItalic.woff2') format('woff2'),
+        url('../fonts/CeraPro-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Black'), local('CeraPro-Black'),
+        url('../fonts/CeraPro-Black.woff2') format('woff2'),
+        url('../fonts/CeraPro-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Bold'), local('CeraPro-Bold'),
+        url('../fonts/CeraPro-Bold.woff2') format('woff2'),
+        url('../fonts/CeraPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Regular'), local('CeraPro-Regular'),
+        url('../fonts/CeraPro-Regular.woff2') format('woff2'),
+        url('../fonts/CeraPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Cera Pro';
+    src: local('Cera Pro Thin'), local('CeraPro-Thin'),
+        url('../fonts/CeraPro-Thin.woff2') format('woff2'),
+        url('../fonts/CeraPro-Thin.woff') format('woff');
+    font-weight: 100;
+    font-style: normal;
+}
+
+.container {
+    max-width: 1160px;
+    margin: auto;
+}
+
+.header {
+    background-color: #1B2F78;
+}
+
+.header__top {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.header__top__logo {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    font-family: 'Cera Pro', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #FFFFFF;
+}
+
+.header__search {
+    height: 20px;
+    background-color: #0C1E60;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    column-gap: 10px;
+}
+
+.header__search input::placeholder {
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    opacity: 0.3;
+}
+
+.header__search input {
+    border: none;
+    background-color: transparent;
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    opacity: 0.3;
+    outline: none;
+}
+
+.header__visually {
+    border: none;
+    background-color: transparent;
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    padding: 10px 13px;
+    column-gap: 10px;
+    border: solid 1px #FFFFFF;
+    border-radius: 2px;
+    transition: 0.2s ease-in-out;
+}
+
+.header__visually:hover {
+    background-color: #FFFFFF;
+    transition: 0.3s ease-in-out;
+    color: #1B2F78;
+}
+
+.header__visually svg path {
+    transition: 0.2s ease-in-out;
+}
+
+.header__visually:hover svg path {
+    fill: #1B2F78;
+    transition: 0.3s ease-in-out;
+}
+
+.header__tel__btn {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header__top__center {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+.header__tel {
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+}
+
+.header__tel__text {
+    font-family: 'Cera Pro', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #FFFFFF;
+}
+
+.header__tel__rectangle {
+    background-color: transparent;
+    background-image: url(../img/rectangle.svg);
+    display: block;
+    width: 12px;
+    height: 8px;
+    background-size: 12px 8px;
+}
+
+.header__hr {
+    background-color: #FFFFFF;
+    opacity: 0.3;
+    height: 1px;
+    margin-bottom: 10px;
+}
+
+.header__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+}
+
+.header__bottom nav ul {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 20px;
+    align-items: center;
+}
+
+.header__bottom li a {
+    font-family: 'Cera Pro';
+    font-weight: 700;
+    font-size: 13px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    transition: 0.2s ease-in-out;
+}
+
+.header__bottom li a:hover {
+    color: #0085FF;
+    transition: 0.3s ease-in-out;
+}
+
+.header__bottom div {
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.header__help {
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 9px 30px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.header__help:hover {
+    transition: 0.3s ease-in-out;
+    background-color: #FFFFFF;
+    color: #1B2F78;
+}
+
+.header__help svg path {
+    transition: 0.3s ease-in-out;
+}
+
+.header__help:hover svg path {
+    fill: #1B2F78;
+    transition: 0.3s ease-in-out;
+}
+
+.header__problem {
+    font-family: 'Cera Pro';
+    font-weight: 500;
+    font-size: 13px;
+    color: #FFFFFF;
+    border-radius: 2px;
+    padding: 10px 30px;
+    background-color: rgba(0, 133, 255, 0.1);
+    border: none;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.header__problem:hover {
+    color: #1B2F78;
+    transition: 0.3s ease-in-out;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.header__problem svg path {
+    transition: 0.3s ease-in-out;
+}
+
+.header__problem:hover svg path {
+    fill: #1B2F78;
+    transition: 0.3s ease-in-out;
+}
+
+.slide-effect:after {
+	content: "";
+	display: block;    
+	width: 100%;
+	height: 100%;    
+	position: absolute;
+	top: 0;      
+	left: 0;   
+	background: transparent;
+	background-image: linear-gradient(96.78deg, rgba(27, 47, 120, 0.8) 34.98%, rgba(27, 47, 120, 0.24) 100%);
+	opacity: 0.8;
+}
+
+.main__slider {
+    overflow-x: hidden;
+    position: relative;
+}
+
+.services__info {
+    overflow-x: hidden;
+}
+
+.pagination-main {
+    
+}
