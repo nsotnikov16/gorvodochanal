@@ -1199,7 +1199,7 @@ body {
     bottom: 0;
     left: 0;
     z-index: 9999;
-    background-color: rgba(12, 29, 46, 0.9);
+    background-color: rgba(12, 29, 46, 0.7);
     transition: all 0.2s;
 }
 
@@ -1270,6 +1270,12 @@ body {
     color: #0E1B30;
     display: block;
     padding-bottom: 6px;
+    transition: opacity 0.2s;
+}
+
+.menu__help__content a:hover {
+    opacity: 0.6;
+    transition: opacity 0.3s;
 }
 
 .menu__help__content a:not(:last-child) {
