@@ -49,8 +49,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let helpBackground = document.querySelector('#helpBackground');
     let btnHelps = document.querySelectorAll('.call__menu');
     let menuHelp = document.querySelector('#menuHelp');
-    let closeMenu = document.querySelector('#closeMenu');
+    let closeMenus = document.querySelectorAll('.help__close__menu');
 
+    //Открыть меню
     for (let btnHelp of btnHelps) {
         btnHelp.addEventListener('click', function () {
             helpBackground.classList.add('menu__help__container-open');
@@ -58,15 +59,15 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    closeMenu.addEventListener('click', function () {
-        helpBackground.classList.remove('menu__help__container-open');
-        menuHelp.classList.remove('menu__help-open');
-    })
+    //Закрыть меню
+    for(let closeMenu of closeMenus) {
+        closeMenu.addEventListener('click', function () {
+            helpBackground.classList.remove('menu__help__container-open');
+            menuHelp.classList.remove('menu__help-open');
+        })
+    }
 
-    helpBackground.addEventListener('click', function() {
-        helpBackground.classList.remove('menu__help__container-open');
-        menuHelp.classList.remove('menu__help-open');
-    })
+    
 
 
 
