@@ -32,20 +32,43 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 
-    //Открытие меню при клике на телефон в хэдере
-    /* let headerDropdown = document.querySelector('#headerDropdown');
-    let menuDropdown = document.querySelector('#menuDropdown');
+    //фокус инпута в хедере
+    let inputHeader = document.querySelector('#inputHeader');
+    let formHeader = document.querySelector('#formHeader');
 
-    headerDropdown.addEventListener('click', function () {
-        menuDropdown.classList.add('open');
+    inputHeader.addEventListener('focus', function () {
+        formHeader.classList.add('header__search__outline');
     })
 
-    document.addEventListener('click', function(event) {
-        console.log(event.target)
-        if(event.target !== menuDropdown) {
-            menuDropdown.classList.remove('open');
-        }
-    }) */
+    inputHeader.addEventListener('blur', function () {
+        formHeader.classList.remove('header__search__outline');
+    })
+
+
+    //Выезжающее меню при нажатии на кнопку "помощь"
+    let helpBackground = document.querySelector('#helpBackground');
+    let btnHelps = document.querySelectorAll('.call__menu');
+    let menuHelp = document.querySelector('#menuHelp');
+    let closeMenu = document.querySelector('#closeMenu');
+
+    for (let btnHelp of btnHelps) {
+        btnHelp.addEventListener('click', function () {
+            helpBackground.classList.add('menu__help__container-open');
+            menuHelp.classList.add('menu__help-open');
+        })
+    }
+
+    closeMenu.addEventListener('click', function () {
+        helpBackground.classList.remove('menu__help__container-open');
+        menuHelp.classList.remove('menu__help-open');
+    })
+
+    helpBackground.addEventListener('click', function() {
+        helpBackground.classList.remove('menu__help__container-open');
+        menuHelp.classList.remove('menu__help-open');
+    })
+
+
 
 })
 
