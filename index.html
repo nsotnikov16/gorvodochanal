@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Горводоканал</title>
+    <link rel="shortcut icon" type="image/png" href="./img/favicon.ico"/>
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -42,13 +43,12 @@
                 </div>
                 <button class="header__tel__btn">
                     <div class="header__tel">
-                        +7 (3462) 45 65 44
+                        <span id="headerTel">+7 (3462) 45 65 44</span>
                         <span class="header__tel__rectangle">
                         </span>
                         <div class="header__dropdown">
                             <div class="header__dropdown__tel">
-                                <a href="tel:+7 (3462) 45 65 44">
-                                    +7 (3462) 45 65 44
+                                <a id="headerTelDropdown" href="">
                                 </a>
                                 <span class="header__dropdown__rectangle">
                                 </span>
@@ -97,7 +97,12 @@
         <div class="header__hr"></div>
         <div class="container">
             <div class="header__bottom">
-                <nav>
+                <button id="menuBtn" class="header__menu__btn nav-toggle" aria-label="Меню">
+                    <span class="bar-top"></span>
+                    <span class="bar-mid"></span>
+                    <span class="bar-bot"></span>
+                </button>
+                <nav id="headerNav">
                     <ul>
                         <li>
                             <a href="abonent.html">
@@ -136,7 +141,7 @@
                         </li>
                     </ul>
                 </nav>
-                <div>
+                <div class="header__bottom__btn__container">
                     <button class="header__help call__menu">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -154,6 +159,15 @@
                         Сообщить о проблеме
                     </button>
                 </div>
+                <a class="header__visually__mobile" href="#">
+                    <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.8185 3.51375C13.6955 3.37007 10.7568 0 7.00007 0C3.2432 0 0.304597 3.37007 0.181343 3.51389C-0.0604715 3.79561 -0.0604715 4.20439 0.181486 4.48639C0.304597 4.63007 3.2432 8 7.00007 8C10.7568 8 13.6955 4.62979 13.8187 4.48611C14.0605 4.20439 14.0605 3.79561 13.8185 3.51375ZM8.14759 2.02444C8.40021 1.8878 8.75248 2.04458 8.93431 2.37448C9.11613 2.70451 9.0587 3.08286 8.80608 3.2195C8.5536 3.35627 8.20118 3.19935 8.01922 2.86946C7.83754 2.53942 7.89483 2.16107 8.14759 2.02444ZM7.00007 6.77903C4.37579 6.77903 2.16733 4.78205 1.40293 4C1.91911 3.47178 3.09435 2.39011 4.61106 1.74328C4.31523 2.18925 4.14179 2.72212 4.14179 3.2957C4.14179 4.85981 5.42138 6.12769 6.99993 6.12769C8.57848 6.12769 9.85821 4.85981 9.85821 3.2957C9.85821 2.72212 9.68491 2.18925 9.38908 1.74328C10.9058 2.39025 12.0809 3.47178 12.5971 4C11.8327 4.78248 9.62421 6.77903 7.00007 6.77903Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <div id="menuContainer" class="menu__container">
             </div>
         </div>
     </header>
@@ -178,7 +192,7 @@
                             <img src="https://img.geliophoto.com/surgut/18_surgut.jpg" alt="Главный слайд">
                             <div class="main__slider__content">
                                 <p>
-                                    Мы обеспечиваем жителей Сургута чистой питьевой водой
+                                    Для владельцев жилых помещений оплатить услуги водоотведения и водоснабжения...
                                 </p>
                                 <a href="#">
                                     Подробнее
@@ -189,7 +203,8 @@
                             <img src="https://img.geliophoto.com/surgut2020/11_surgut2020.jpg" alt="Главный слайд">
                             <div class="main__slider__content">
                                 <p>
-                                    Мы обеспечиваем жителей Сургута чистой питьевой водой
+                                    Услуга по откачке и вывозу сточных вод с выездом к абоненту. Подать заявку можно на
+                                    сайте
                                 </p>
                                 <a href="#">
                                     Подробнее
@@ -440,6 +455,10 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="container">
+            <div class="services__add">
                 <div class="swiper__second">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -511,7 +530,7 @@
                 </div>
             </div>
         </section>
-        <section class="container">
+        <!-- <section class="container">
             <div class="news">
                 <h2>Новости компании</h2>
                 <div class="news-company">
@@ -552,7 +571,7 @@
                     </svg>
                 </a>
             </div>
-        </section>
+        </section> -->
     </main>
     <footer class="footer">
         <div class="container">
@@ -677,57 +696,57 @@
                 Помощь
             </div>
         </div>
-        <div id="helpBackground" class="menu__help__container help__close__menu">
+        <aside id="helpBackground" class="menu__help__container help__close__menu">
             <div id="menuHelp" class="menu__help menu__help-open">
                 <div class="menu__help__head">
-                    <h2>
+                    <h2 id="menuAsideHead">
                         Быcтрая помощь
                     </h2>
-                    <button class="help__close__menu" aria-label="Закрыть окно"></button>
+                    <button class="menu__close__icon help__close__menu" aria-label="Закрыть окно"></button>
                 </div>
                 <div class="menu__help__content">
-                    <a href="">
+                    <a href="#">
                         Какие документы требуются для оформления услуги по перекрытию/открытию/отглушению водопроводного
                         ввода ХВС?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Какой порядок подключения к централизованным системам холодного водоснабжения и/или
                         водоотведения?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Где взять форму заявления о подключении к централизованным системам холодного водоснабжения
                         и/или
                         водоотведения?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Какие документы требуются для оформления услуги по перекрытию/открытию/отглушению водопроводного
                         ввода ХВС?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Какой порядок подключения к централизованным системам холодного водоснабжения и/или
                         водоотведения?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Где взять форму заявления о подключении к централизованным системам холодного водоснабжения
                         и/или
                         водоотведения?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Какие документы требуются для оформления услуги по перекрытию/открытию/отглушению водопроводного
                         ввода ХВС?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Какой порядок подключения к централизованным системам холодного водоснабжения и/или
                         водоотведения?
                     </a>
-                    <a href="">
+                    <a href="#">
                         Где взять форму заявления о подключении к централизованным системам холодного водоснабжения
                         и/или
                         водоотведения?
                     </a>
                 </div>
             </div>
-        </div>
+        </aside>
     </footer>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
