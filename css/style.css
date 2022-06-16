@@ -469,6 +469,36 @@ body {
     transition: 0.3s ease-in-out;
 }
 
+.breadcrumbs__list {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.breadcrumbs__list a {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #0E1B30;
+}
+
+.breadcrumbs__item:not(:last-child)::after {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+    color: #0E1B30;
+    content: '>';
+    margin: 0 10px;
+}
+
+.breadcrumbs__item-active {
+    color: rgba(27, 47, 120, 1) !important;
+}
+
 .slide-effect:after {
     content: "";
     width: 100%;
