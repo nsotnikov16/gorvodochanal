@@ -125,13 +125,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     //Аккордеон слева
-    let links = document.querySelectorAll('.asside__menu__head__button');
-    let rectMenu = document.querySelectorAll('.aside__menu__rectangle');
+    let links = document.querySelectorAll('.aside__menu__rectangle');
+    let rectMenus = document.querySelectorAll('.asside__menu__head__button');
 
     for (let link of links) {
-        link.addEventListener('click', function () {
-            link.parentNode.classList.toggle('active');
-            link.firstElementChild.classList.toggle('aside__menu__rectangle-active');
+        link.addEventListener('click', function (event) {
+            event.target.parentNode.parentNode.classList.toggle('active');
+            this.classList.toggle('aside__menu__rectangle-active');
         })
     }
 

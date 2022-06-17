@@ -1590,7 +1590,7 @@ body {
 .asside__menu__head:not(.active) .asside__menu__content {
     max-height: 0px;
     visibility: hidden;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
 .asside__menu__content {
@@ -1598,10 +1598,10 @@ body {
     max-height: 5000px;
     visibility: visible;
     box-sizing: border-box;
-    transition: 0.3s;
+    transition: 1.3s;
 }
 
-.aside__menu a {
+.asside__menu__content a {
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 400;
@@ -1610,11 +1610,11 @@ body {
     color: #0E1B30;
     display: block;
     padding: 10px 40px 10px 25px;
-    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
+    position: relative;
 }
 
-.aside__menu a:hover {
+.asside__menu__content li:hover {
     background-color: rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
 }
@@ -1626,19 +1626,24 @@ body {
     font-size: 16px;
     line-height: 20px;
     color: #0E1B30;
-    display: block;
     padding: 10px 20px 10px 25px;
-    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: space-between;
     cursor: pointer;
+    position: relative;
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
 }
 
 .asside__menu__head__button:hover {
     background-color: rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
+}
+
+.asside__menu__content li {
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    padding-left: 15px;
 }
 
 .aside__menu__rectangle {
@@ -1648,12 +1653,23 @@ body {
     width: 25px;
     height: 25px;
     background-size: 25px;
-    transition: 0.2s;
+    transition: 0.3s;
+    flex-shrink: 0;
+    display: block;
 }
 
 .aside__menu__rectangle-active {
     transform: rotate(180deg);
-    transition: 0.2s;
+    transition: 0.3s;
+}
+
+.asside__menu__head__button-active {
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    top: 0;
+    left: 0;
+    background-color: #0085FF;
 }
 
 /* Accordeon left end */
