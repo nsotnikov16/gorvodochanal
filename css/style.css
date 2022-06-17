@@ -1476,6 +1476,191 @@ body {
     visibility: visible;
 }
 
+/* about page start*/
+
+.about__container-flex {
+    display: grid;
+    grid-template-columns: 0.5fr 1.4fr;
+    gap: 20px;
+}
+
+.info__top {
+    height: 300px;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.info__top::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(27, 47, 120, 0.8), rgba(27, 47, 120, 0.8));
+    border-radius: 2px;
+}
+
+.info__main__text {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    color: #FFFFFF;
+    z-index: 1;
+}
+
+.info__main__text h2 {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 38px;
+}
+
+.info__main__text h3 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.info__bottom {
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    margin-bottom: 40px;
+}
+
+.info__bottom h1 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    color: rgba(14, 27, 48, 1);
+    margin-bottom: 30px;
+}
+
+.info__bottom p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(14, 27, 48, 1);
+    margin-bottom: 30px;
+}
+
+.info__bottom__container h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 27px;
+    color: rgba(14, 27, 48, 1);
+    margin-bottom: 22px;
+}
+
+.info__bottom__container div:nth-child(2n) {
+    background-color: #F6F9FB;
+}
+
+.info__bottom__container div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+}
+
+.info__bottom__container div p {
+    max-width: 425px;
+    text-align: end;
+    margin-bottom: 0;
+    padding: 9px 10px;
+}
+
+.aside__menu {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    height: fit-content;
+}
+
+/* Accordeon left strat */
+.asside__menu__head:not(.active) .asside__menu__content {
+    max-height: 0px;
+    visibility: hidden;
+    transition: 0.2s;
+}
+
+.asside__menu__content {
+    overflow-y: hidden;
+    max-height: 5000px;
+    visibility: visible;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+
+.aside__menu a {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0E1B30;
+    display: block;
+    padding: 10px 40px 10px 25px;
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.aside__menu a:hover {
+    background-color: rgba(14, 27, 48, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.asside__menu__head__button {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0E1B30;
+    display: block;
+    padding: 10px 20px 10px 25px;
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    transition: 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.asside__menu__head__button:hover {
+    background-color: rgba(14, 27, 48, 0.1);
+    transition: 0.3s ease-in-out;
+}
+
+.aside__menu__rectangle-active {
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+.aside__menu__rectangle {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/rectangle_menu.svg);
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    transform: rotate(180deg);
+}
+
+/* Accordeon left end */
+
+
+/* about page end*/
+
 @media(max-width: 1180px) {
     .services__container {
         grid-template-columns: repeat(5, 1fr);

@@ -124,6 +124,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
+    //Аккордеон слева
+    let links = document.querySelectorAll('.asside__menu__head__button');
+    let rectMenu = document.querySelectorAll('.aside__menu__rectangle');
+
+    for (let link of links) {
+        link.addEventListener('click', function () {
+            link.parentNode.classList.toggle('active');
+            link.children.classList.add('aside__menu__rectangle-active');
+        })
+    }
+
+
 
 })
 
