@@ -131,11 +131,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let link of links) {
         link.addEventListener('click', function () {
             link.parentNode.classList.toggle('active');
-            link.children.classList.add('aside__menu__rectangle-active');
+            link.firstElementChild.classList.toggle('aside__menu__rectangle-active');
         })
     }
-
-
 
 })
 

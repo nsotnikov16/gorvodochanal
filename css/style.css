@@ -1641,19 +1641,19 @@ body {
     transition: 0.3s ease-in-out;
 }
 
-.aside__menu__rectangle-active {
-    transform: rotate(180deg);
-    transition: 0.3s;
-}
-
 .aside__menu__rectangle {
     background-color: transparent;
     background-repeat: no-repeat;
     background-image: url(../img/rectangle_menu.svg);
-    width: 20px;
-    height: 20px;
-    background-size: 20px;
+    width: 25px;
+    height: 25px;
+    background-size: 25px;
+    transition: 0.2s;
+}
+
+.aside__menu__rectangle-active {
     transform: rotate(180deg);
+    transition: 0.2s;
 }
 
 /* Accordeon left end */
