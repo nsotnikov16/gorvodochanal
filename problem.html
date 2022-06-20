@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Официальный сайт компании СГМУП &quot;Горводоканал&quot;">
     <meta name="keywords" content="водоканал, сургут">
-    <title>Горводоканал</title>
+    <title>Проблема</title>
     <link rel="shortcut icon" type="image/png" href="./img/favicon.ico" />
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/normalize.css">
@@ -152,14 +152,14 @@
                         </svg>
                         Помощь
                     </button>
-                    <button class="header__problem">
+                    <a href="problem.html" class="header__problem">
                         <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M13.9261 12.3184L7.47353 1.13453C7.26356 0.770643 6.73665 0.769877 6.52626 1.13453L0.0737658 12.3184C-0.135769 12.6817 0.125774 13.1387 0.547387 13.1387H13.4524C13.8717 13.1387 14.1367 12.6837 13.9261 12.3184ZM1.49425 12.0449L6.99991 2.50213L12.5056 12.0449H1.49425ZM7.54679 10.1541C7.54679 10.4561 7.30195 10.701 6.99991 10.701C6.69787 10.701 6.45304 10.4561 6.45304 10.1541C6.45304 9.85205 6.69787 9.60722 6.99991 9.60722C7.30192 9.60722 7.54679 9.85205 7.54679 10.1541ZM6.99991 5.48618C7.30195 5.48618 7.54679 5.73102 7.54679 6.03306V8.51347C7.54679 8.81551 7.30195 9.06034 6.99991 9.06034C6.69787 9.06034 6.45304 8.81551 6.45304 8.51347V6.03306C6.45304 5.73102 6.69787 5.48618 6.99991 5.48618Z"
                                 fill="white" />
                         </svg>
                         Сообщить о проблеме
-                    </button>
+                    </a>
                 </div>
                 <a class="header__visually__mobile" href="#" aria-label="Версия для слабовидящих">
                     <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -173,8 +173,39 @@
             </div>
         </div>
     </header>
-
-
+    <nav class="container">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+                <a href="index.html">Главная</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="/">Услуги</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a href="/" class="breadcrumbs__item-active">Юридические лица</a>
+            </li>
+        </ul>
+    </nav>
+    <main class="container problem">
+        <h1>
+            Сообщить о проблеме
+        </h1>
+        <p>
+            Обращаем Ваше внимание, что данная форма предназначена для передачи сообщений о проблемах на сетях водоснабжения и водоотведения в приёмную Центральной диспетчерской службы АО "Нижегородский водоканал", поданные таким образом заявки передаются в работу. Форма не предусматривает направление ответа. 
+        </p>
+        <div class="problem__container">
+            <form action="#" method="POST" class="problem__form">
+                <input type="text" name="">
+                <input type="text" name="name">
+                <input type="text" name="address">
+                <input type="tel" name="tel">
+                <input type="email" name="email">
+                <input type="text" name="comment">
+                
+            </form>
+            <div class="problem__map"></div>
+        </div>
+    </main>
     <footer class="footer">
         <div class="container">
             <div class="footer__top">
@@ -202,7 +233,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="problem.html">
                                 Сообщить о проблеме
                             </a>
                         </li>
@@ -349,7 +380,8 @@
                     </a>
                     <a href="#">
                         Где взять форму заявления о подключении к централизованным системам холодного водоснабжения
-                        и/или водоотведения?
+                        и/или
+                        водоотведения?
                     </a>
                 </div>
             </div>
@@ -358,4 +390,5 @@
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
+
 </html>
