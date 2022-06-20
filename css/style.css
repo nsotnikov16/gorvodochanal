@@ -473,6 +473,7 @@ body {
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .breadcrumbs__list a {
@@ -493,6 +494,10 @@ body {
     color: #0E1B30;
     content: '>';
     margin: 0 10px;
+}
+
+.breadcrumbs__item {
+    white-space: nowrap;
 }
 
 .breadcrumbs__item-active {
@@ -1490,6 +1495,9 @@ body {
     border-radius: 2px;
     position: relative;
     margin-bottom: 20px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .info__top::after {
@@ -1503,18 +1511,19 @@ body {
 
 .info__main__text {
     position: absolute;
-    bottom: 20px;
+    bottom: 24px;
     left: 30px;
     font-family: 'Cera Pro';
     font-style: normal;
     color: #FFFFFF;
     z-index: 1;
+    padding-right: 30px;
 }
 
 .info__main__text h2 {
     font-weight: 500;
     font-size: 30px;
-    line-height: 38px;
+    line-height: 30px;
 }
 
 .info__main__text h3 {
@@ -1551,6 +1560,17 @@ body {
     margin-bottom: 30px;
 }
 
+.info__bottom h3 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: rgba(14, 27, 48, 1);
+    text-align: start;
+    padding: 9px 10px;
+}
+
 .info__bottom__container h2 {
     font-family: 'Cera Pro';
     font-style: normal;
@@ -1570,6 +1590,7 @@ body {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    gap: 60px;
 }
 
 .info__bottom__container div p {
@@ -1584,6 +1605,7 @@ body {
     box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
     border-radius: 2px;
     height: fit-content;
+    margin-bottom: 60px;
 }
 
 /* Accordeon left strat */
@@ -1609,7 +1631,7 @@ body {
     line-height: 20px;
     color: #0E1B30;
     display: block;
-    padding: 10px 40px 10px 25px;
+    padding: 10px 37px 10px 25px;
     transition: 0.3s ease-in-out;
     position: relative;
 }
@@ -1626,7 +1648,7 @@ body {
     font-size: 16px;
     line-height: 20px;
     color: #0E1B30;
-    padding: 10px 20px 10px 25px;
+    padding: 10px 20px 10px 0px;
     transition: 0.3s ease-in-out;
     display: flex;
     align-items: center;
@@ -1636,6 +1658,14 @@ body {
     border-bottom: 1px solid rgba(14, 27, 48, 0.1);
 }
 
+.asside__menu__head__button a {
+    width: 100%;
+}
+
+.asside__first-level {
+    padding-left: 25px;
+}
+
 .asside__menu__head__button:hover {
     background-color: rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
@@ -1643,7 +1673,12 @@ body {
 
 .asside__menu__content li {
     border-bottom: 1px solid rgba(14, 27, 48, 0.1);
-    padding-left: 15px;
+    position: relative;
+}
+
+.asside__menu__content__second-level a {
+    padding-left: 40px;
+    display: flex;
 }
 
 .aside__menu__rectangle {
@@ -1658,6 +1693,19 @@ body {
     display: block;
 }
 
+.asside__menu__head__button__second-level {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.asside__menu__head__button__second-level a {
+    padding-right: 20px;
+}
+
+.asside__menu__content__third-level a {
+    padding-left: 55px;
+}
+
 .aside__menu__rectangle-active {
     transform: rotate(180deg);
     transition: 0.3s;
@@ -1670,6 +1718,10 @@ body {
     top: 0;
     left: 0;
     background-color: #0085FF;
+}
+
+.asside__menu__head__button-active + a {
+    font-weight: 500;
 }
 
 /* Accordeon left end */
@@ -1841,7 +1893,7 @@ body {
     }
 
     .fixed-links {
-        top: 149px;
+        top: 386px;
     }
 
     .header__tel__btn {
@@ -1871,6 +1923,10 @@ body {
 
 @media(max-width: 850px) {
 
+    .info__main__text {
+        left: 15px;
+    }
+
     .footer__top nav h3 {
         margin-bottom: 15px;
     }
@@ -1886,9 +1942,21 @@ body {
     .footer__bottom p {
         text-align: center;
     }
+    .info__bottom {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 @media(max-width: 768px) {
+
+    .info__bottom__container div p {
+        white-space: wrap;
+    }
+
+    .about__container-flex {
+        display: block;
+    }
 
     .main__slider__desktop-size {
         display: none;
@@ -1963,6 +2031,10 @@ body {
 
 @media(max-width: 550px) {
 
+    .info__bottom__container div p {
+        max-width: 100%;
+    }
+
     .news-company {
         grid-template-columns: 1fr;
     }
@@ -1980,7 +2052,7 @@ body {
     }
 
     .fixed-links {
-        top: 195px;
+        top: 20vh;
     }
 
     .footer__top {
@@ -2006,9 +2078,20 @@ body {
     .menu__container {
         top: 188px;
     }
+
+    .info__bottom__container div {
+        display: block;
+    }
+
+    .info__bottom h3 {
+        text-align: end;
+        font-weight: 500;
+    }
 }
 
 @media(max-width: 470px) {
+
+    
     .main__slider__content {
         top: 70px;
         left: 40px;

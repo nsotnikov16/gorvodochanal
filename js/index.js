@@ -113,15 +113,11 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //брейкпоинт 1100px
-    const screenWidth = window.screen.width
-    if (screenWidth <= 1100) {
-        //Подстановка меню в выпадающее меню
-        let headerNav = document.querySelector('#headerNav');
-        menu.innerHTML = headerNav.innerHTML + menu.innerHTML;
-        let headerDropdown = document.querySelector('.header__dropdown');
-        menu.innerHTML = menu.innerHTML + headerDropdown.innerHTML;
-    }
+    //Подстановка меню в выпадающее меню
+    let headerNav = document.querySelector('#headerNav');
+    menu.innerHTML = headerNav.innerHTML + menu.innerHTML;
+    let headerDropdown = document.querySelector('.header__dropdown');
+    menu.innerHTML = menu.innerHTML + headerDropdown.innerHTML;
 
 
     //Аккордеон слева
