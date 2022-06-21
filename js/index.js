@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
     /* Селект на странице проблемы */
     let selects = document.querySelectorAll('.select');
     let options = document.querySelectorAll('.select__option');
-    
+
     //Открытие селекта
     for (let select of selects) {
         select.addEventListener('click', function (event) {
@@ -208,14 +208,25 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.toggle('border');
             this.firstChild.nextElementSibling.firstChild.nextElementSibling.classList.toggle('open');
         })
+        //Закрытие селекта по клику вне него
+        document.addEventListener('click', (e) => {
+            const withinBoundaries = e.composedPath().includes(select);
+            if (!withinBoundaries) {
+                select.classList.remove('open');
+                select.classList.toggle('border');
+                select.firstChild.nextElementSibling.firstChild.nextElementSibling.classList.remove('open');
+            }
+        })
     }
 
     //Выбор пункта из открытого селекта
-    for(let option of options) {
-        option.addEventListener('click', function(event) {
+    for (let option of options) {
+        option.addEventListener('click', function (event) {
             event.target.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
         })
     }
+
+
 
 })
 
