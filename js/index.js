@@ -192,10 +192,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         // В качестве контента балуна задаем строку с адресом объекта.
                         balloonContent: firstGeoObject.getAddressLine()
                     });
+                    mapAddress.value = myPlacemark.properties._data['balloonContent'];
+                    mapAddress.nextElementSibling.classList.add('placeholder__top');
             });
+            
         }
     }
 
+    let mapAddress = document.querySelector('#mapAddress');
 
     /* Селект на странице проблемы */
     let selects = document.querySelectorAll('.select');
@@ -239,6 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     for (let inputPlaceholder of inputPlaceholders) {
+        
         //Смещаем текст по фокусу
         inputPlaceholder.addEventListener('focus', function () {
             this.nextElementSibling.classList.add('placeholder__top');
@@ -254,6 +259,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         })
 
+        //возвращаем текст обратно, по потери фокуса с проверкой на пустоту
         inputPlaceholder.addEventListener('blur', function () {
             if (inputPlaceholder.value === '') {
                 this.nextElementSibling.classList.remove('placeholder__top');

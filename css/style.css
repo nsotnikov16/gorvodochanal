@@ -2046,6 +2046,33 @@ body {
     position: relative;
 }
 
+.form__input textarea {
+    width: 100%;
+    outline: none;
+    box-sizing: border-box;
+    position: relative;
+    border: 1px solid #D0D5DD;
+    border-radius: 2px;
+    background: #FFFFFF;
+    padding: 14px;
+    margin-bottom: 10px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #667085;
+    transition: 0.2s;
+    cursor: pointer;
+    height: 100px;
+    resize: none;
+}
+
+.form__input textarea:focus {
+    border: 1px solid #1B2F78;
+    transition: 0.3s;
+}
+
 .form__input__placeholder {
     user-select: none;
     position: absolute;
