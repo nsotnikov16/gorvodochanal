@@ -290,22 +290,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
                 for (let deleteFileButton of deleteFileButtons) {
-                    deleteFileButton.addEventListener('click', function (event) {
+                    deleteFileButton.addEventListener('click', function () {
                         delete file.files[i];
-                        console.log(file.files)
+                        console.log(file.files[i])
                     })
                 }
-                
             }
-            /* console.log(file.files)
-            if (file.files.length > 0) {
-                let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
-                for (let deleteFileButton of deleteFileButtons) {
-                    deleteFileButton.addEventListener('click', function (event) {
-                        file.files.remove()
-                    })
-                }
-            } */
         })
     }
+
 })
