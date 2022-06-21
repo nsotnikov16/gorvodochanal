@@ -2146,10 +2146,10 @@ body {
 }
 
 .form__input__file {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 13px;
 }
 
 .form__input__file input {
@@ -2233,6 +2233,33 @@ body {
     line-height: 18px;
     color: #1B2F78;
     border-bottom: 1px solid #1B2F78;
+}
+
+.form__input__file__list {
+    margin-bottom: 10px;
+}
+
+.form__input__file__list li {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #667085;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 3px;
+}
+
+.file__delete__icon {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-image: url(../img/delete_file.svg);
+    width: 18px;
+    height: 16px;
+    display: block;
+    cursor: pointer;
 }
 
 /* problem page end */

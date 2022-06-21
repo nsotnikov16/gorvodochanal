@@ -192,10 +192,10 @@ document.addEventListener('DOMContentLoaded', function () {
                         // В качестве контента балуна задаем строку с адресом объекта.
                         balloonContent: firstGeoObject.getAddressLine()
                     });
-                    mapAddress.value = myPlacemark.properties._data['balloonContent'];
-                    mapAddress.nextElementSibling.classList.add('placeholder__top');
+                mapAddress.value = myPlacemark.properties._data['balloonContent'];
+                mapAddress.nextElementSibling.classList.add('placeholder__top');
             });
-            
+
         }
     }
 
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     for (let inputPlaceholder of inputPlaceholders) {
-        
+
         //Смещаем текст по фокусу
         inputPlaceholder.addEventListener('focus', function () {
             this.nextElementSibling.classList.add('placeholder__top');
@@ -275,4 +275,37 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    //Показ файлов выбранных для загрузки 
+    let files = document.querySelectorAll('.form__input__file input[type="file"]');
+    let fileList = document.querySelector('.form__input__file__list');
+
+
+    for (let file of files) {
+        //Выводим название файлов при изменении инпута
+        file.addEventListener('input', function () {
+            for (let i = 0; i < file.files.length; i++) {
+                let li = document.createElement('li');
+                li.innerHTML = file.files[`${i}`].name + `<span class="file__delete__icon"></span>`;
+                fileList.appendChild(li);
+
+                let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
+                for (let deleteFileButton of deleteFileButtons) {
+                    deleteFileButton.addEventListener('click', function (event) {
+                        delete file.files[i];
+                        console.log(file.files)
+                    })
+                }
+                
+            }
+            /* console.log(file.files)
+            if (file.files.length > 0) {
+                let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
+                for (let deleteFileButton of deleteFileButtons) {
+                    deleteFileButton.addEventListener('click', function (event) {
+                        file.files.remove()
+                    })
+                }
+            } */
+        })
+    }
 })
