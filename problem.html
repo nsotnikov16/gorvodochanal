@@ -213,24 +213,33 @@
                         </div>
                     </div>
                     <div class="form__input">
-                        <input value="" name="fio">
+                        <input class="input__placeholder" value="" name="fio">
                         <div class="form__input__placeholder">
                             ФИО<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input value="" name="address">
+                        <input class="input__placeholder" value="" name="address">
                         <div class="form__input__placeholder">
                             Введите адрес или отметьте точку на карте<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input name="tel" placeholder="Телефон (начиная с телефонного кода)">
+                        <input name="tel" type="tel" placeholder="Телефон (начиная с телефонного кода)">
                     </div>
                     <div class="form__input">
-                        <input name="email" placeholder="Email">
+                        <input class="input__placeholder" name="email">
+                        <div class="form__input__placeholder">
+                            Email
+                        </div>
                     </div>
-                    <textarea name="comment">Комментарий</textarea>
+                    
+                    <div class="form__input">
+                        <textarea class="input__placeholder" name="comment"></textarea>
+                        <div class="form__input__placeholder">
+                            Комментарий
+                        </div>
+                    </div>
                     <div class="form__input__file">
                         <input multiple accept="image/jpeg,image/png" id="file-input" type="file" name="file" multiple>
                         <label for="file-input">Добавить файл</label>
@@ -435,6 +444,7 @@
         </aside>
     </footer>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/inputmask.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

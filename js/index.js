@@ -213,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const withinBoundaries = e.composedPath().includes(select);
             if (!withinBoundaries) {
                 select.classList.remove('open');
-                select.classList.toggle('border');
+                select.classList.remove('border');
                 select.firstChild.nextElementSibling.firstChild.nextElementSibling.classList.remove('open');
             }
         })
@@ -226,8 +226,47 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    //Маска телефона
+    let inputTel = document.querySelectorAll("input[type='tel']");
+    var im = new Inputmask("+7 (999)-999-99-99");
+    for (let tel of inputTel) {
+        im.mask(tel);
+    }
 
+    //смещение плейсхолдера инпута на границу
+    let inputPlaceholders = document.querySelectorAll('.input__placeholder');
+    let txtPlaceholders = document.querySelectorAll('.form__input__placeholder');
+
+
+    for (let inputPlaceholder of inputPlaceholders) {
+        //Смещаем текст по фокусу
+        inputPlaceholder.addEventListener('focus', function () {
+            this.nextElementSibling.classList.add('placeholder__top');
+        })
+        //Ждем ввода текста, если инпут пустой, то возвращаем текст по потери фокуса
+        inputPlaceholder.addEventListener('input', function () {
+            if (inputPlaceholder.value === '') {
+                inputPlaceholder.addEventListener('blur', function () {
+                    if (inputPlaceholder.value === '') {
+                        this.nextElementSibling.classList.remove('placeholder__top');
+                    }
+                })
+            }
+        })
+
+        inputPlaceholder.addEventListener('blur', function () {
+            if (inputPlaceholder.value === '') {
+                this.nextElementSibling.classList.remove('placeholder__top');
+            }
+        })
+    }
+
+    //При клике на текст в инпуте, смещаем его и делаем инпут активным
+    for (let txtPlaceholder of txtPlaceholders) {
+        txtPlaceholder.addEventListener('click', function () {
+            txtPlaceholder.classList.add('placeholder__top');
+            txtPlaceholder.previousElementSibling.focus();
+        })
+    }
 
 })
-
-
