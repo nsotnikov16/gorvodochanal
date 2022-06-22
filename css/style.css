@@ -2460,7 +2460,7 @@ body {
 }
 
 .contacts__accordeon__container h2:hover {
-    background-color: #f7f7f7;
+    background-color: #F6F9FB;
     transition: 0.3s ease-in-out;
 }
 
@@ -2768,6 +2768,10 @@ body {
 
 @media(max-width: 768px) {
 
+    .main__slider {
+        border-radius: 0px;
+    }
+
     .page__search h1 {
         font-size: 20px;
     }
@@ -2959,6 +2963,10 @@ body {
 }
 
 @media(max-width: 425px) {
+
+    .contacts__accordeon__dropdown {
+        padding: 20px 10px;
+    }
 
     .contacts__container h1 {
         font-size: 18px;
