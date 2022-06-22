@@ -134,7 +134,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Аккордеон слева
     let links = document.querySelectorAll('.aside__menu__rectangle');
-    let rectMenus = document.querySelectorAll('.asside__menu__head__button');
 
     for (let link of links) {
         link.addEventListener('click', function (event) {
@@ -317,4 +316,17 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+
+    //Аккордеон на странцие контакты
+    let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
+
+    for (let contactsAccordBtn of contactsAccordBtns) {
+        contactsAccordBtn.addEventListener('click', function() {
+            contactsAccordBtn.childNodes[3].classList.toggle('contacts__accordeon-active');
+            contactsAccordBtn.childNodes[1].childNodes[1].classList.toggle('aside__menu__rectangle-active');
+        })
+    }
 })
+
+
+/* aside__menu__rectangle-active */

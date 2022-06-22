@@ -2371,6 +2371,162 @@ body {
 
 /* page search end */
 
+
+/* page contacts start */
+
+.contacts__container {
+    padding: 20px 30px 40px 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    margin-bottom: 60px;
+    height: fit-content;
+}
+
+.contacts__container h1 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0E1B30;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+    margin-bottom: 20px;
+}
+
+.contacts__items {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 25px;
+}
+
+.contacts__item__noborder {
+    border-bottom: none !important;
+}
+
+.contacts__item__txt {
+    width: 100%;
+}
+
+.contacts__item__txt h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #0E1B30;
+    margin-bottom: 25px;
+}
+
+.contacts__item__txt div {
+    padding-bottom: 38px;
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+}
+
+.contacts__item__txt div p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E1B30;
+}
+
+.contacts__item__txt div p:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.contacts__accordeon__container {
+    padding-left: 72px;
+}
+
+.contacts__accordeon__container h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    color: #0E1B30;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-top: 1px solid #D0D5DD;
+    border-bottom: 1px solid #D0D5DD;
+    padding: 15px 0px 15px 30px;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.contacts__accordeon__container h2:hover {
+    background-color: #f7f7f7;
+    transition: 0.3s ease-in-out;
+}
+
+.contacts__accordeon__retangle {
+    background-color: transparent;
+    background-image: url(../img/contacts_accordeon_rectangle.svg);
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    display: block;
+    transition: 0.2s;
+}
+
+.contacts__accordeon__dropdown {
+    padding: 20px 30px 0px 30px;
+    background-color: #F6F9FB;
+}
+
+.contacts__accordeon__dropdown__card {
+    margin-bottom: 20px;
+}
+
+.contacts__accordeon__dropdown__card:not(:last-child) {
+    border-bottom: 1px solid #D0D5DD;
+}
+
+.contacts__accordeon__dropdown__card p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #0E1B30;
+    margin-bottom: 10px;
+}
+
+.contacts__accordeon__dropdown__card p:last-child {
+    padding-bottom: 20px;
+}
+
+.contacts__accordeon__dropdown__card h3 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 23px;
+    color: #0E1B30;
+    margin-bottom: 25px;
+}
+
+.contacts__accordeon__dropdown {
+    visibility: hidden;
+    max-height: 0px;
+    transition: 0.3s;
+}
+
+.contacts__accordeon-active {
+    overflow-y: hidden;
+    max-height: 5000px;
+    visibility: visible;
+    transition: 1.3s;
+}
+
+/* page contacts end */
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
@@ -2804,7 +2960,37 @@ body {
 
 @media(max-width: 425px) {
 
+    .contacts__container h1 {
+        font-size: 18px;
+    }
+
+    .contacts__item__txt h2 {
+        line-height: 18px;
+        margin-bottom: 20px;
+    }
+
+    .contacts__container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .contacts__accordeon__container h2 {
+        padding-left: 5px;
+    }
+
+    .contacts__items svg {
+        display: none;
+    }
+    
+    .contacts__accordeon__container {
+        padding-left: 0;
+    }
+
     .page__search h1 {
+        font-size: 18px;
+    }
+
+    .problem h1 {
         font-size: 18px;
     }
 
