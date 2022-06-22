@@ -53,10 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
     headerTelDropdown.href = 'tel:' + headerTel.textContent;
     headerTelDropdown.textContent = headerTel.textContent;
 
+    //подстановка телефона в ссылку
     let moreTels = document.querySelectorAll('.phone__substitution');
     for (let moreTel of moreTels) {
         moreTel.href = 'tel:' + moreTel.textContent;
-        console.log(moreTel.href)
+    }
+
+    //подстановка почты в ссылку
+    let moreMails = document.querySelectorAll('.mail__substitution');
+    for (let moreMail of moreMails) {
+        moreMail.href = 'mailto:' + moreMail.textContent;
     }
 
     //Бургер меню
