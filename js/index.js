@@ -53,6 +53,12 @@ document.addEventListener('DOMContentLoaded', function () {
     headerTelDropdown.href = 'tel:' + headerTel.textContent;
     headerTelDropdown.textContent = headerTel.textContent;
 
+    let moreTels = document.querySelectorAll('.phone__substitution');
+    for (let moreTel of moreTels) {
+        moreTel.href = 'tel:' + moreTel.textContent;
+        console.log(moreTel.href)
+    }
+
     //Бургер меню
     const btn = document.getElementById('menuBtn');
     let menu = document.getElementById('menuContainer');
@@ -133,7 +139,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     /* Карта */
-    ymaps.ready(init);
+
+    if (document.getElementById('map')) {
+        ymaps.ready(init);
+    }
 
     function init() {
         var myPlacemark,
@@ -231,10 +240,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     //Маска телефона
-    let inputTel = document.querySelectorAll("input[type='tel']");
-    var im = new Inputmask("+7 (999)-999-99-99");
-    for (let tel of inputTel) {
-        im.mask(tel);
+
+    if (document.querySelector("input[type='tel']")) {
+        let inputTel = document.querySelectorAll("input[type='tel']");
+        var im = new Inputmask("+7 (999)-999-99-99");
+        for (let tel of inputTel) {
+            im.mask(tel);
+        }
     }
 
     //смещение плейсхолдера инпута на границу
@@ -278,23 +290,23 @@ document.addEventListener('DOMContentLoaded', function () {
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
     let fileList = document.querySelector('.form__input__file__list');
-
+    let numberFiles = 0;
+    let sizeFiles = 0;
 
     for (let file of files) {
         //Выводим название файлов при изменении инпута
         file.addEventListener('input', function () {
+
             for (let i = 0; i < file.files.length; i++) {
                 let li = document.createElement('li');
                 li.innerHTML = file.files[`${i}`].name + `<span class="file__delete__icon"></span>`;
                 fileList.appendChild(li);
-
-                let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
-                for (let deleteFileButton of deleteFileButtons) {
-                    deleteFileButton.addEventListener('click', function () {
-                        delete file.files[i];
-                        console.log(file.files[i])
-                    })
-                }
+            }
+            let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
+            for (let deleteFileButton of deleteFileButtons) {
+                deleteFileButton.addEventListener('click', function (event) {
+                    console.log(file.files)
+                })
             }
         })
     }

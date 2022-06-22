@@ -1635,6 +1635,8 @@ body {
     padding: 10px 37px 10px 25px;
     transition: 0.3s ease-in-out;
     position: relative;
+    min-height: 25px;
+    align-items: center
 }
 
 .asside__menu__content li:hover {
@@ -1657,6 +1659,7 @@ body {
     cursor: pointer;
     position: relative;
     border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    min-height: 25px;
 }
 
 .asside__menu__head__button a {
@@ -1705,6 +1708,7 @@ body {
 
 .asside__menu__content__third-level a {
     padding-left: 55px;
+    align-items: flex-start;
 }
 
 .aside__menu__rectangle-active {
@@ -2264,6 +2268,105 @@ body {
 
 /* problem page end */
 
+
+/* page search start */
+
+.page__search {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    padding: 20px 40px 40px 40px;
+    margin-bottom: 60px;
+}
+
+.search__form {
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 2px;
+    position: relative;
+    display: flex;
+    padding-right: 14px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search__form input {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #667085;
+    outline: none;
+    padding: 14px;
+}
+
+.search__form button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.search__form button:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.page__search h1 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0E1B30;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+    margin-bottom: 20px;
+}
+
+.result__search__container ul li:not(:last-child) {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+    margin-bottom: 20px;
+}
+
+.result__search__container ul li a {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 31px;
+    color: #0E1B30;
+    transition: 0.2s;
+    display: block;
+}
+
+.result__search__container ul li a:hover {
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.result__search__container ul li p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 31px;
+    color: #0E1B30;
+}
+
+.result__search__container ul li span {
+    color: #0085FF;
+}
+
+/* page search end */
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
@@ -2492,9 +2595,32 @@ body {
     .about__container-flex {
         display: block;
     }
+
+    .problem__container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #map {
+        height: 400px;
+    }
 }
 
 @media(max-width: 768px) {
+
+    .page__search h1 {
+        font-size: 20px;
+    }
+
+    .page__search {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .problem {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 
     .info__bottom__container div p {
         white-space: wrap;
@@ -2642,6 +2768,23 @@ body {
 
 @media(max-width: 470px) {
 
+    .form__input__placeholder {
+        font-size: 11px;
+        left: 5px;
+        padding-top: 4px;
+    }
+
+    .form__input input::placeholder {
+        font-size: 11px;
+    }
+
+    .select a {
+        font-size: 11px;
+    }
+
+    .select__option {
+        font-size: 11px;
+    }
 
     .main__slider__content {
         top: 70px;
@@ -2656,11 +2799,47 @@ body {
 }
 
 @media(max-width: 425px) {
+
+    .page__search h1 {
+        font-size: 18px;
+    }
+
+    .result__search__container ul li a {
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        display: block;
+    }
+
+    .result__search__container ul li p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .page__search {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .problem {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .services__container {
         grid-template-columns: 1fr;
     }
 
     .services__card p {
         max-width: 200px;
+    }
+
+    .form__input__file {
+        flex-direction: column-reverse;
+    }
+
+    .form__input__file label {
+        width: 100%;
+        box-sizing: border-box;
     }
 }
