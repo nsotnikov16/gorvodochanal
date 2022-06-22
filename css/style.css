@@ -954,9 +954,10 @@ body {
 
 .news-company__card img {
     width: 100%;
-    max-height: 250px;
+    height: 210px;
     margin-bottom: 13px;
     border-radius: 5px;
+    object-fit: cover;
 }
 
 .news-company__card div {
@@ -2374,7 +2375,7 @@ body {
 
 /* page contacts start */
 
-.contacts__container {
+.content__container {
     padding: 20px 30px 40px 30px;
     background: #FFFFFF;
     box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
@@ -2383,7 +2384,7 @@ body {
     height: fit-content;
 }
 
-.contacts__container h1 {
+.content__container h1 {
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 500;
@@ -2516,6 +2517,7 @@ body {
     visibility: hidden;
     max-height: 0px;
     transition: 0.3s;
+    overflow-y: hidden;
 }
 
 .contacts__accordeon-active {
@@ -2526,6 +2528,84 @@ body {
 }
 
 /* page contacts end */
+
+
+/* page news start */
+
+.news__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.news-company__card__main {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    position: relative;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.news-company__card__main img {
+    height: 300px;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.news-company__card__main__txt {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(27, 47, 120, 0.7);
+    bottom: 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 4px;
+}
+
+.news-company__card__main:hover .news-company__card__main__txt div {
+    transition: 0.3s ease-in-out;
+    gap: 15px;
+}
+
+.news-company__card__main__txt div {
+    display: flex;
+    align-items: center;
+}
+
+.news-company__card__main div {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    display: flex;
+    gap: 10px;
+    transition: 0.2s ease-in-out;
+}
+
+.news-company__arrow__desktop {
+    background-color: transparent;
+    background-image: url(../img/news_main_rectangle.svg);
+    background-repeat: no-repeat;
+    width: 23px;
+    height: 8px;
+}
+
+.news-company__card__main div svg {
+    fill: #FFFFFF;
+}
+
+.news-company__arrow__mobile {
+    display: none;
+}
+
+/* page news end */
 
 @media(max-width: 1200px) {
     .services__entity__container {
@@ -2768,6 +2848,11 @@ body {
 
 @media(max-width: 768px) {
 
+    .content__container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .main__slider {
         border-radius: 0px;
     }
@@ -2866,6 +2951,54 @@ body {
 }
 
 @media(max-width: 550px) {
+
+    .news-company__card__main img {
+        height: 210px;
+    }
+
+    .news-company__card__main {
+        grid-column-end: 1;
+        height: auto;
+    }
+
+    .news-company__arrow__desktop {
+        display: none;
+    }
+
+    .news-company__arrow__mobile {
+        display: block;
+    }
+
+    .news-company__card__main__txt {
+        position: static;
+        background-color: transparent;
+        flex-direction: column;
+        padding-left: 0;
+        padding-bottom: 0;
+    }
+
+    .news-company__card__main__txt div {
+        font-family: 'Cera Pro';
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 16px;
+        color: #1B2F78;
+        display: flex;
+        align-items: center;
+        column-gap: 7px;
+    }
+
+    .news-company__card__main__txt p {
+        font-family: 'Cera Pro';
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 19px;
+        color: #0E1B30;
+    }
+
+    .news__container {
+        grid-template-columns: 1fr;
+    }
 
     .info__bottom__container div p {
         max-width: 100%;
@@ -2968,7 +3101,7 @@ body {
         padding: 20px 10px;
     }
 
-    .contacts__container h1 {
+    .content__container h1 {
         font-size: 18px;
     }
 
@@ -2977,7 +3110,7 @@ body {
         margin-bottom: 20px;
     }
 
-    .contacts__container {
+    .content__container {
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -2989,7 +3122,7 @@ body {
     .contacts__items svg {
         display: none;
     }
-    
+
     .contacts__accordeon__container {
         padding-left: 0;
     }
