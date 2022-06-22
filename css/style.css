@@ -349,6 +349,10 @@ body {
     column-gap: 8px;
 }
 
+.header__tel__link {
+    color: #FFFFFF;
+}
+
 .header__tel__text {
     font-family: 'Cera Pro', sans-serif;
     font-size: 15px;
