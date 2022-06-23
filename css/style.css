@@ -2826,6 +2826,65 @@ body {
 
 /* передать показания конец */
 
+/* entry page start */
+
+.entry__bottom {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    padding: 30px 30px 40px 30px;
+    margin-bottom: 60px;
+}
+
+.entry__content h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0E1B30;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+    margin-bottom: 10px;
+}
+
+.entry__content ol {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #0E1B30;
+    padding-left: 20px;
+}
+
+.entry__content ol li {
+    list-style-type: decimal;
+}
+
+.entry__plugin {
+    border: 1px solid #D0D5DD;
+    border-radius: 2px;
+    height: 200px;
+    margin-bottom: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+
+    /* Gray/500 */
+
+    color: #667085;
+}
+
+/* entry page end */
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
@@ -3077,6 +3136,11 @@ body {
 }
 
 @media(max-width: 768px) {
+
+    .entry__bottom {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     .transmission__bottom {
         padding-left: 15px;
