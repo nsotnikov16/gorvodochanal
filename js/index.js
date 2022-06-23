@@ -308,13 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //Маска телефона
-
-    let inputTel = document.querySelectorAll("input[type='tel']");
-    var im = new Inputmask("+7 (999)-999-99-99");
-    for (let tel of inputTel) {
-        im.mask(tel);
-    }
+    
 
     //Аккордеон на странцие контакты
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
@@ -340,5 +334,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = '';
             })
         })
+    }
+
+    //Маска телефона
+
+    let inputTel = document.querySelectorAll("input[type='tel']");
+    var im = new Inputmask("+7 (999)-999-99-99");
+    for (let tel of inputTel) {
+        im.mask(tel);
     }
 })
