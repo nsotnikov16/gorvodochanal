@@ -244,15 +244,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //Маска телефона
 
-    if (document.querySelector("input[type='tel']")) {
-        let inputTel = document.querySelectorAll("input[type='tel']");
-        var im = new Inputmask("+7 (999)-999-99-99");
-        for (let tel of inputTel) {
-            im.mask(tel);
-        }
-    }
 
     //смещение плейсхолдера инпута на границу
     let inputPlaceholders = document.querySelectorAll('.input__placeholder');
@@ -316,6 +308,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    //Маска телефона
+
+    let inputTel = document.querySelectorAll("input[type='tel']");
+    var im = new Inputmask("+7 (999)-999-99-99");
+    for (let tel of inputTel) {
+        im.mask(tel);
+    }
 
     //Аккордеон на странцие контакты
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
@@ -331,12 +330,12 @@ document.addEventListener('DOMContentLoaded', function () {
     // Popups фото
     let photoOpeneds = document.querySelectorAll('.photo__opened');
     for (let photoOpened of photoOpeneds) {
-        photoOpened.addEventListener('click', function() {
+        photoOpened.addEventListener('click', function () {
             var popupPhoto = document.querySelector('#photo');
             popupPhoto.classList.add('popup_opened');
             popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = this.src;
 
-            popupPhoto.childNodes[1].childNodes[3].addEventListener('click', function(){
+            popupPhoto.childNodes[1].childNodes[3].addEventListener('click', function () {
                 popupPhoto.classList.remove('popup_opened');
                 popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = '';
             })

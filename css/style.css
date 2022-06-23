@@ -484,7 +484,7 @@ body {
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 16px;
     color: #0E1B30;
 }
@@ -1506,6 +1506,7 @@ body {
     background-color: transparent;
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
 }
 
 .info__top::after {
@@ -2779,6 +2780,51 @@ body {
 
 /* popups end */
 
+/* передать показания начало */
+
+.transmission__bottom {
+    padding: 30px;
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgb(27 47 120 / 10%);
+    border-radius: 2px;
+    margin-bottom: 40px;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.transmission__bottom div h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #0E1B30;
+}
+
+.transmission__bottom div p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #0E1B30;
+}
+
+.transmission__bottom div p a {
+    border-bottom: 1px solid #0E1B30;
+}
+
+.transmission__bottom div p:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.transmission__bottom div p {
+    padding-right: 10px;
+}
+
+/* передать показания конец */
 
 @media(max-width: 1200px) {
     .services__entity__container {
@@ -2812,6 +2858,12 @@ body {
         grid-template-columns: 1fr 0.5fr;
         display: grid;
         row-gap: 10px;
+    }
+
+    .transmission__bottom {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 40px;
     }
 }
 
@@ -3026,9 +3078,13 @@ body {
 
 @media(max-width: 768px) {
 
+    .transmission__bottom {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .photo__container ul li img:hover {
         transform: scale(1);
-
     }
 
     .news-detail__container {
