@@ -3288,6 +3288,10 @@ body {
 
 @media(max-width: 425px) {
 
+    .video__container iframe {
+        height: 315px;
+    }
+
     .news-detail__container img {
         height: 200px;
     }
