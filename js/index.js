@@ -321,12 +321,25 @@ document.addEventListener('DOMContentLoaded', function () {
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
 
     for (let contactsAccordBtn of contactsAccordBtns) {
-        contactsAccordBtn.addEventListener('click', function() {
+        contactsAccordBtn.addEventListener('click', function () {
             contactsAccordBtn.childNodes[3].classList.toggle('contacts__accordeon-active');
             contactsAccordBtn.childNodes[1].childNodes[1].classList.toggle('aside__menu__rectangle-active');
         })
     }
+
+
+    // Popups фото
+    let photoOpeneds = document.querySelectorAll('.photo__opened');
+    for (let photoOpened of photoOpeneds) {
+        photoOpened.addEventListener('click', function() {
+            var popupPhoto = document.querySelector('#photo');
+            popupPhoto.classList.add('popup_opened');
+            popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = this.src;
+
+            popupPhoto.childNodes[1].childNodes[3].addEventListener('click', function(){
+                popupPhoto.classList.remove('popup_opened');
+                popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = '';
+            })
+        })
+    }
 })
-
-
-/* aside__menu__rectangle-active */
