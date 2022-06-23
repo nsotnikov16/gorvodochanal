@@ -3026,6 +3026,11 @@ body {
 
 @media(max-width: 768px) {
 
+    .photo__container ul li img:hover {
+        transform: scale(1);
+
+    }
+
     .news-detail__container {
         padding-left: 15px;
         padding-right: 15px;
