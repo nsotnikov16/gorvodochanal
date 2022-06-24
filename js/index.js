@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    
+
 
     //Аккордеон на странцие контакты
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
@@ -342,25 +342,31 @@ document.addEventListener('DOMContentLoaded', function () {
     let individualForm = document.querySelector('#individualForm');
     let legalForm = document.querySelector('#legalForm');
 
-    individualBtn.addEventListener('click',() => {
-        legalBtn.classList.remove('personal__area__active');
-        individualBtn.classList.add('personal__area__active');
-        legalForm.classList.remove('personal__form__active')
-        individualForm.classList.add('personal__form__active')
-    })
+    if (individualBtn) {
+        individualBtn.addEventListener('click', function () {
+            legalBtn.classList.remove('personal__area__active');
+            individualBtn.classList.add('personal__area__active');
+            legalForm.classList.remove('personal__form__active')
+            individualForm.classList.add('personal__form__active')
+        })
+    }
 
-    legalBtn.addEventListener('click',() => {
-        individualBtn.classList.remove('personal__area__active');
-        legalBtn.classList.add('personal__area__active');
-        individualForm.classList.remove('personal__form__active')
-        legalForm.classList.add('personal__form__active')
-    })
+    if (legalBtn) {
+        legalBtn.addEventListener('click', function () {
+            individualBtn.classList.remove('personal__area__active');
+            legalBtn.classList.add('personal__area__active');
+            individualForm.classList.remove('personal__form__active')
+            legalForm.classList.add('personal__form__active')
+        })
+    }
 
     //Маска телефона
 
     let inputTel = document.querySelectorAll("input[type='tel']");
-    var im = new Inputmask("+7 (999)-999-99-99");
-    for (let tel of inputTel) {
-        im.mask(tel);
+    if (inputTel.length > 0) {
+        let im = new Inputmask("+7 (999)-999-99-99");
+        for (let tel of inputTel) {
+            im.mask(tel);
+        }
     }
 })

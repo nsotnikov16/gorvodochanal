@@ -3095,6 +3095,136 @@ body {
     margin: auto;
 }
 
+/* connection page start */
+
+.connection__bottom {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    padding: 30px 30px 40px 30px;
+    margin-bottom: 60px;
+}
+
+.problem__form h3 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 27px;
+    color: #0E1B30;
+    margin-bottom: 10px;
+}
+
+.connection__form__top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.connection__file__head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.connection__file__head p {
+    font-family: 'Cera Pro';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: #667085;
+}
+
+.connection__file__item {
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    border-radius: 2px;
+    padding: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.connection__file__item .form__input__file {
+    margin-bottom: 0;
+}
+
+.connection__file__item .form__input__file label {
+    padding: 7px 10px;
+}
+
+.connection__file__name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #667085;
+}
+
+.connection__file__contaner {
+    margin-bottom: 15px;
+}
+
+.problem__form button {
+    margin-bottom: 30px;
+}
+
+.connection__know h2 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    color: #0E1B30;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+}
+
+.connection__know p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #0E1B30;
+}
+
+.connection__know ol {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 27px;
+    color: #0E1B30;
+    padding-left: 18px;
+    margin-bottom: 0;
+}
+
+.connection__know ol li {
+    list-style-type: decimal;
+}
+
+.connection__know ol li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.connection__know ol li ul {
+    padding-left: 27px;
+}
+
+.connection__know ol li ul li {
+    list-style-type: disc;
+}
+
+/* connection page end */
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
