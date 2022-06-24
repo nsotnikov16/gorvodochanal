@@ -2924,6 +2924,176 @@ body {
     margin-bottom: 20px;
 }
 
+.personal__area {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    padding: 20px 30px;
+    max-width: 360px;
+    margin: auto;
+    margin-bottom: 83px;
+    margin-top: 30px;
+}
+
+.personal__area h1 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #0E1B30;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #D0D5DD;
+}
+
+.personal__area__btn__container {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.personal__area__btn__container button {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #0E1B30;
+    width: 100%;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 15px 23px;
+    border: 1px solid #D0D5DD;
+    transition: 0.2s ease-in-out;
+}
+
+.personal__area__btn__container button:hover {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}
+
+.personal__area__individual__btn {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.personal__area__legal__btn {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.personal__area__active {
+    background-color: #1B2F78 !important;
+    border: none !important;
+    color: #FFFFFF !important;
+}
+
+.personal__area__form__container .form__input {
+    margin-bottom: 17px;
+}
+
+.personal__area__form__container .form__input__checkbox {
+    margin-bottom: 15px;
+}
+
+.personal__area__form__container button {
+    margin-bottom: 20px;
+}
+
+.personal__area__form__container a {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #0E1B30;
+    margin-bottom: 10px;
+    display: block;
+    transition: 0.2s ease-in-out;
+}
+
+.personal__area__form__container a:hover {
+    opacity: 0.8;
+    transition: 0.3s ease-in-out;
+}
+
+.individual__form {
+    display: none;
+}
+
+.legal__form {
+    display: none;
+}
+
+.personal__form__active {
+    display: block;
+}
+
+.page__not__found {
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(27, 47, 120, 0.1);
+    border-radius: 2px;
+    max-width: 760px;
+    padding: 44px 110px 40px 110px;
+    margin: auto;
+    margin-top: 45px;
+    margin-bottom: 60px;
+}
+
+.page__not__found h1 {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    color: #0E1B30;
+    margin-bottom: 5px;
+}
+
+.page__not__found p {
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: center;
+    color: #0E1B30;
+    max-width: 542px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.page__not__found a {
+    padding: 15px 105px;
+    font-family: 'Cera Pro';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    background: #1B2F78;
+    border-radius: 2px;
+    color: #FFFFFF;
+    display: block;
+    max-width: 100px;
+    margin: auto;
+    transition: 0.2s ease-in-out;
+}
+
+.page__not__found a:hover {
+    background-color: #0085FF;
+    transition: 0.3s ease-in-out;
+}
+
+.page__not__found svg {
+    display: flex;
+    width: 100%;
+    margin: auto;
+}
 
 @media(max-width: 1200px) {
     .services__entity__container {
@@ -3176,6 +3346,16 @@ body {
 }
 
 @media(max-width: 768px) {
+
+    .page__not__found h1 {
+        font-size: 20px;
+        line-height: 22px;
+    }
+
+    .page__not__found {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     .entry__bottom {
         padding-left: 15px;
@@ -3452,6 +3632,16 @@ body {
 }
 
 @media(max-width: 425px) {
+
+    .page__not__found a {
+        max-width: 100%;
+        padding: 15px 20px;
+    }
+
+    .personal__area {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 
     .video__container iframe {
         height: 315px;

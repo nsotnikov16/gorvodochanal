@@ -336,6 +336,26 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    //Табы в личном кабинете
+    let individualBtn = document.querySelector('#individualBtn');
+    let legalBtn = document.querySelector('#legalBtn');
+    let individualForm = document.querySelector('#individualForm');
+    let legalForm = document.querySelector('#legalForm');
+
+    individualBtn.addEventListener('click',() => {
+        legalBtn.classList.remove('personal__area__active');
+        individualBtn.classList.add('personal__area__active');
+        legalForm.classList.remove('personal__form__active')
+        individualForm.classList.add('personal__form__active')
+    })
+
+    legalBtn.addEventListener('click',() => {
+        individualBtn.classList.remove('personal__area__active');
+        legalBtn.classList.add('personal__area__active');
+        individualForm.classList.remove('personal__form__active')
+        legalForm.classList.add('personal__form__active')
+    })
+
     //Маска телефона
 
     let inputTel = document.querySelectorAll("input[type='tel']");
