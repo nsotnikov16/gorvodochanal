@@ -143,75 +143,76 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
 
-    /* Карта */
+    /* Карта на странице проблема */
 
     if (document.getElementById('map')) {
         ymaps.ready(init);
-    }
+        function init() {
+            var myPlacemark,
+                myMap = new ymaps.Map('map', {
+                    center: [61.241778, 73.393032],
+                    zoom: 13
+                }, {
+                    searchControlProvider: 'yandex#search'
+                });
 
-    function init() {
-        var myPlacemark,
-            myMap = new ymaps.Map('map', {
-                center: [61.241778, 73.393032],
-                zoom: 13
-            }, {
-                searchControlProvider: 'yandex#search'
+            // Слушаем клик на карте.
+            myMap.events.add('click', function (e) {
+                var coords = e.get('coords');
+
+                // Если метка уже создана – просто передвигаем ее.
+                if (myPlacemark) {
+                    myPlacemark.geometry.setCoordinates(coords);
+                }
+                // Если нет – создаем.
+                else {
+                    myPlacemark = createPlacemark(coords);
+                    myMap.geoObjects.add(myPlacemark);
+                    // Слушаем событие окончания перетаскивания на метке.
+                    myPlacemark.events.add('dragend', function () {
+                        getAddress(myPlacemark.geometry.getCoordinates());
+                    });
+                }
+                getAddress(coords);
             });
 
-        // Слушаем клик на карте.
-        myMap.events.add('click', function (e) {
-            var coords = e.get('coords');
-
-            // Если метка уже создана – просто передвигаем ее.
-            if (myPlacemark) {
-                myPlacemark.geometry.setCoordinates(coords);
-            }
-            // Если нет – создаем.
-            else {
-                myPlacemark = createPlacemark(coords);
-                myMap.geoObjects.add(myPlacemark);
-                // Слушаем событие окончания перетаскивания на метке.
-                myPlacemark.events.add('dragend', function () {
-                    getAddress(myPlacemark.geometry.getCoordinates());
+            // Создание метки.
+            function createPlacemark(coords) {
+                return new ymaps.Placemark(coords, {
+                    iconCaption: 'поиск...'
+                }, {
+                    preset: 'islands#violetDotIconWithCaption',
+                    draggable: true
                 });
             }
-            getAddress(coords);
-        });
 
-        // Создание метки.
-        function createPlacemark(coords) {
-            return new ymaps.Placemark(coords, {
-                iconCaption: 'поиск...'
-            }, {
-                preset: 'islands#violetDotIconWithCaption',
-                draggable: true
-            });
-        }
+            // Определяем адрес по координатам (обратное геокодирование).
+            function getAddress(coords) {
+                myPlacemark.properties.set('iconCaption', 'поиск...');
+                ymaps.geocode(coords).then(function (res) {
+                    var firstGeoObject = res.geoObjects.get(0);
 
-        // Определяем адрес по координатам (обратное геокодирование).
-        function getAddress(coords) {
-            myPlacemark.properties.set('iconCaption', 'поиск...');
-            ymaps.geocode(coords).then(function (res) {
-                var firstGeoObject = res.geoObjects.get(0);
+                    myPlacemark.properties
+                        .set({
+                            // Формируем строку с данными об объекте.
+                            iconCaption: [
+                                // Название населенного пункта или вышестоящее административно-территориальное образование.
+                                firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
+                                // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
+                                firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
+                            ].filter(Boolean).join(', '),
+                            // В качестве контента балуна задаем строку с адресом объекта.
+                            balloonContent: firstGeoObject.getAddressLine()
+                        });
+                    mapAddress.value = myPlacemark.properties._data['balloonContent'];
+                    mapAddress.nextElementSibling.classList.add('placeholder__top');
+                });
 
-                myPlacemark.properties
-                    .set({
-                        // Формируем строку с данными об объекте.
-                        iconCaption: [
-                            // Название населенного пункта или вышестоящее административно-территориальное образование.
-                            firstGeoObject.getLocalities().length ? firstGeoObject.getLocalities() : firstGeoObject.getAdministrativeAreas(),
-                            // Получаем путь до топонима, если метод вернул null, запрашиваем наименование здания.
-                            firstGeoObject.getThoroughfare() || firstGeoObject.getPremise()
-                        ].filter(Boolean).join(', '),
-                        // В качестве контента балуна задаем строку с адресом объекта.
-                        balloonContent: firstGeoObject.getAddressLine()
-                    });
-                mapAddress.value = myPlacemark.properties._data['balloonContent'];
-                mapAddress.nextElementSibling.classList.add('placeholder__top');
-            });
-
+            }
         }
     }
+
+
 
     let mapAddress = document.querySelector('#mapAddress');
 
@@ -369,4 +370,106 @@ document.addEventListener('DOMContentLoaded', function () {
             im.mask(tel);
         }
     }
+
+
+    //Карта на странице качество воды
+
+
+    if (document.getElementById('mapQuality')) {
+        ymaps.ready(init);
+
+        function init() {
+            var myMapQual = new ymaps.Map("mapQuality", {
+                center: [61.258500, 73.45422],
+                zoom: 15
+            });
+
+            // Создаем многоугольник, используя класс GeoObject.
+            var myGeoObject = new ymaps.GeoObject({
+                // Описываем геометрию геообъекта.
+                geometry: {
+                    // Тип геометрии - "Многоугольник".
+                    type: "Polygon",
+                    // Указываем координаты вершин многоугольника.
+                    coordinates: [
+                        // Координаты вершин внешнего контура.
+                        [
+                            [61.270000, 73.371522],
+                            [61.297500, 73.384522],
+                            [61.297000, 73.39222],
+                            [61.288000, 73.40822],
+                            [61.280000, 73.45822],
+                            [61.270200, 73.47522],
+                            [61.260500, 73.47622],
+                            [61.258500, 73.45400],
+                            [61.259000, 73.45300],
+                        ],
+                        // Координаты вершин внутреннего контура.
+                        /* [
+                            [55.75, 37.82],
+                            [55.75, 37.98],
+                            [55.65, 37.90]
+                        ] */
+                    ],
+                    // Задаем правило заливки внутренних контуров по алгоритму "nonZero".
+                    fillRule: "nonZero"
+                },
+                // Описываем свойства геообъекта.
+                properties: {
+                    // Содержимое балуна.
+                    balloonContent: "Многоугольник"
+                }
+            }, {
+                // Описываем опции геообъекта.
+                // Цвет заливки.
+                fillColor: '#0085FF4D',
+                // Цвет обводки.
+                strokeColor: '#0085FF',
+                // Общая прозрачность (как для заливки, так и для обводки).
+                opacity: 0.5,
+                // Ширина обводки.
+                strokeWidth: 3,
+                // Стиль обводки.
+                strokeStyle: 'solid'
+            });
+
+            // Добавляем многоугольник на карту.
+            myMapQual.geoObjects.add(myGeoObject);
+
+            // Создаем многоугольник, используя вспомогательный класс Polygon.
+            /* var myPolygon = new ymaps.Polygon([
+                // Указываем координаты вершин многоугольника.
+                // Координаты вершин внешнего контура.
+                [
+                    [55.75, 37.50],
+                    [55.80, 37.60],
+                    [55.75, 37.70],
+                    [55.70, 37.70],
+                    [55.70, 37.50]
+                ],
+                // Координаты вершин внутреннего контура.
+                [
+                    [55.75, 37.52],
+                    [55.75, 37.68],
+                    [55.65, 37.60]
+                ]
+            ], {
+                // Описываем свойства геообъекта.
+                // Содержимое балуна.
+                hintContent: "Многоугольник"
+            }, {
+                // Задаем опции геообъекта.
+                // Цвет заливки.
+                fillColor: '#00FF0088',
+                // Ширина обводки.
+                strokeWidth: 5
+            }); */
+
+            // Добавляем многоугольник на карту.
+            /* myMapQual.geoObjects.add(myPolygon); */
+        }
+    }
+
+
+
 })

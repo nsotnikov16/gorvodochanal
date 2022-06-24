@@ -3225,6 +3225,12 @@ body {
 
 /* connection page end */
 
+#mapQuality {
+    width: 100%;
+    height: 500px;
+    border-radius: 2px;
+}
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
