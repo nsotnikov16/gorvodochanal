@@ -380,8 +380,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function init() {
             var myMapQual = new ymaps.Map("mapQuality", {
-                center: [61.340000, 73.429000],
-                zoom: 16
+                center: [61.287350, 73.40980],
+                zoom: 11
             });
 
             // Создаем многоугольник, используя класс GeoObject.
