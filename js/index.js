@@ -852,6 +852,10 @@ document.addEventListener('DOMContentLoaded', function () {
             // Добавляем многоугольник на карту.
             myMapQual.geoObjects.add(northernResidentialArea2);
         }
+
+        myMapQual.geoObjects.addEventListener('click', function() {
+            console.log('asd');
+        })
     }
 
 
