@@ -3265,6 +3265,7 @@ body {
 .quality__desription table {
     width: 100%;
     margin-bottom: 20px;
+    border-collapse: collapse;
 }
 
 .quality__desription table th {
@@ -3276,6 +3277,22 @@ body {
     text-align: start;
     color: #0E1B30;
     padding: 10px;
+}
+
+.quality__desription table tr:first-child {
+    border-bottom: 1px solid #0E1B30;
+}
+
+.quality__desription table tr:last-child {
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+}
+
+.quality__desription table tr th:not(:first-child) {
+    text-align: center;
+}
+
+.quality__desription table tr td:not(:first-child) {
+    text-align: center;
 }
 
 .quality__desription table tr:nth-child(2n) {
