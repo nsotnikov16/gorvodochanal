@@ -384,6 +384,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 zoom: 11
             });
 
+
             // Создаем многоугольник, используя класс GeoObject.
             var northernIndustrialArea = new ymaps.GeoObject({
                 // Описываем геометрию геообъекта.
@@ -743,7 +744,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             [61.270000, 73.370700],
                             [61.264020, 73.421580],
                         ],
-                    ], 
+                    ],
                     // Задаем правило заливки внутренних контуров по алгоритму "nonZero".
                     fillRule: "nonZero"
                 },
@@ -826,7 +827,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             [61.337450, 73.414250],
                             [61.338300, 73.413900],
                         ],
-                    ], 
+                    ],
                     // Задаем правило заливки внутренних контуров по алгоритму "nonZero".
                     fillRule: "nonZero"
                 },
@@ -851,13 +852,28 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Добавляем многоугольник на карту.
             myMapQual.geoObjects.add(northernResidentialArea2);
+
+
+
+            //получение координат клика по объектам
+           /*  myMapQual.geoObjects['northernResidentialArea2'].events.add('click', function (e) {
+                var coords = e.get('coords');
+                console.log(northernResidentialArea2.geometry.coordinates)
+
+            }); */
         }
 
-        myMapQual.geoObjects.addEventListener('click', function() {
-            console.log('asd');
-        })
+
     }
 
 
+    //Таблица качества воды, присваивание data-label всем td для адаптива таблицы
+    let qualityTables = document.querySelectorAll('#qualityTable tr');
+    for(let qualityTable of qualityTables) {
+        qualityTable.childNodes[1].dataset.label = 'Определяемый показатель';
+        qualityTable.childNodes[3].dataset.label = 'Единицы измерения';
+        qualityTable.childNodes[5].dataset.label = 'Значение';
+        qualityTable.childNodes[7].dataset.label = 'Норматив';
+    }
 
 })

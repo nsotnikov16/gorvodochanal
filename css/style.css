@@ -3251,6 +3251,7 @@ body {
     font-size: 18px;
     line-height: 23px;
     color: #0E1B30;
+    margin-bottom: 10px;
 }
 
 .quality__desription div span {
@@ -3297,7 +3298,7 @@ body {
 
 .quality__desription table tr:nth-child(2n) {
     background-color: #F6F9FB;
-} 
+}
 
 .quality__desription table tr td {
     padding: 10px;
@@ -3683,12 +3684,76 @@ body {
 }
 
 @media(max-width: 600px) {
+
+    .quality__desription div {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .quality__desription div span {
+        font-size: 14px;
+    }
+
     .services__container {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .services-page__container {
         flex-wrap: wrap;
+    }
+
+    table {
+        border: 0;
+    }
+
+    table th {
+        display: none;
+    }
+
+    table tr {
+        margin-bottom: 10px;
+        display: block;
+        border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+        display: block;
+        text-align: right;
+        font-size: 13px;
+        border-bottom: 1px dotted #ccc;
+        border-right: 1px solid transparent;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+
+    table td:before {
+        content: attr(data-label);
+        float: left;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .quality__desription table tr td {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 5px;
+        padding-right: 5px;
+        gap: 10px;
+    }
+
+    table td:before {
+        text-align: start;
+    }
+
+    .quality__desription table tr {
+        margin-bottom: 0;
+    }
+
+    .quality__desription table tr td:not(:first-child) {
+        text-align: end;
     }
 }
 
@@ -3846,6 +3911,11 @@ body {
 }
 
 @media(max-width: 425px) {
+
+    .quality__desription table tr td {
+        font-size: 14px;
+        line-height: 16px;
+    }
 
     .page__not__found a {
         max-width: 100%;
