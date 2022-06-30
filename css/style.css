@@ -3357,12 +3357,6 @@ body {
         grid-column-end: 3;
     }
 
-    .footer__bottom {
-        grid-template-columns: 1fr 0.5fr;
-        display: grid;
-        row-gap: 10px;
-    }
-
     .transmission__bottom {
         display: flex;
         flex-direction: column-reverse;
