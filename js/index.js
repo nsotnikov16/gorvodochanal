@@ -333,10 +333,9 @@ document.addEventListener('DOMContentLoaded', function () {
             let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
             for (let deleteFileButton of deleteFileButtons) {
                 deleteFileButton.addEventListener('click', function (event) {
-
                     console.log(file.files)
-                    file.value = '';
-                    console.log(file.files)
+                    this.value = '';
+                    this.parentNode.innerHTML = '';
                 })
             }
         })
