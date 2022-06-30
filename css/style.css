@@ -3231,6 +3231,10 @@ body {
     border-radius: 5px;
 }
 
+.quality {
+    padding-bottom: 0;
+}
+
 .quality p {
     font-family: 'Cera Pro';
     font-style: normal;
@@ -3252,7 +3256,7 @@ body {
     color: #0E1B30;
     margin-bottom: 10px;
     margin-top: 20px;
-    
+
 }
 
 .quality__desription div span {
@@ -3319,6 +3323,7 @@ body {
 .quality__description__under__table-active {
     visibility: visible;
     height: auto;
+    padding-bottom: 20px;
 }
 
 @media(max-width: 1200px) {
