@@ -1293,6 +1293,7 @@ body {
     height: 100%;
     transform: translate(101%);
     transition: transform 0.2s;
+    overflow-y: scroll;
 }
 
 .menu__help-open {
@@ -2236,6 +2237,8 @@ body {
     color: #0E1B30;
     padding-left: 35px;
     cursor: pointer;
+    position: relative;
+    user-select: none;
 }
 
 .form__input__checkbox label a {

@@ -344,10 +344,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-
-
-
-
     //Табы в личном кабинете
     let individualBtn = document.querySelector('#individualBtn');
     let legalBtn = document.querySelector('#legalBtn');
