@@ -858,653 +858,122 @@ document.addEventListener('DOMContentLoaded', function () {
             //получение координат клика по объектам
             northernResidentialArea2.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Северный жилой район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,2</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,3</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,9</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,8</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
 
             northernResidentialArea.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Северный жилой район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,1</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,4</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,4</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,12</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
 
             centralDistrict.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Центральный район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,5</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>5,4</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,9</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,5</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
 
             northernIndustrialArea.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Северный промышленный район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,6</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,2</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,2</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,02</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
 
             northEastResidentialArea.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Северо восточный жилой район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,0</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,3</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,5</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,5</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
 
             easternRegion.events.add('click', function (e) {
                 selectedArea.innerHTML = 'Вы выбрали: <span>Восточный район</span>';
-                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr><tr><td>Водородный показатель (рН)</td><td>
-                    ед. рН</td><td>7,9</td><td>в пределах 6,0-9,0</td></tr><tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,0</td><td>не более 7,0</td></tr><tr><td>Цветность</td><td>градус</td><td>
-                    6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
-            <tr>
-                <td>
-                    Остаточный хлор
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    1,15
-                </td>
-                <td>
-                    в распределительной сети не нормируется
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 20С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Запах при 60С
-                </td>
-                <td>
-                    баллы
-                </td>
-                <td>
-                    1
-                </td>
-                <td>
-                    не более 2
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Железо общее
-                </td>
-                <td>
-                    мг/дм3
-                </td>
-                <td>
-                    0,10
-                </td>
-                <td>
-                    не более 0,3
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общее микробное число (ОМЧ)
-                </td>
-                <td>
-                    кол. в 1 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    не более 50
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Общие колиформные бактерии (ОКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Термотолерантные колиформные бактерии (ТКБ)
-                </td>
-                <td>
-                    КОЕ/100 мл
-                </td>
-                <td>
-                    отс
-                </td>
-                <td>
-                    отсутствие
-                </td>
-            </tr>`;
-                qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+                qualityTable.innerHTML = `<tr><th>Определяемый показатель</th><th>Единицы измерения</th><th>Значение</th><th>Норматив (СанПиН 2.1.4.1074-01)</th></tr>
+                <tr><td>Водородный показатель (рН)</td><td>ед. рН</td><td>7,9</td><td>в пределах 6,0-9,0</td></tr>
+                <tr><td>Жесткость общая</td><td>градус жесткости</td><td>6,0</td><td>не более 7,0</td></tr>
+                <tr><td>Цветность</td><td>градус</td><td>6</td><td>не более 20</td></tr><tr><td>Мутность</td><td>мг/дм3</td><td>&#706; 0,58</td><td>не более 1,5</td></tr>
+                <tr><td>Остаточный хлор</td><td>мг/дм3</td><td>1,15</td><td>в распределительной сети не нормируется</td></tr>
+                <tr><td>Запах при 20С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Запах при 60С</td><td>баллы</td><td>1</td><td>не более 2</td></tr>
+                <tr><td>Железо общее</td><td>мг/дм3</td><td>0,10</td><td>не более 0,3</td></tr>
+                <tr><td>Общее микробное число (ОМЧ)</td><td>кол. в 1 мл</td><td>отс</td><td>не более 50</td></tr>
+                <tr><td>Общие колиформные бактерии (ОКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>
+                <tr><td>Термотолерантные колиформные бактерии (ТКБ)</td><td>КОЕ/100 мл</td><td>отс</td><td>отсутствие</td></tr>`;
+                addAreaDescription();
+                tableAddDataset();
             });
         }
     }
 
+    function addAreaDescription() {
+        qualityTable.nextSibling.nextSibling.classList.add('quality__description__under__table-active');
+    }
 
     let qualityTable = document.querySelector('#qualityTable');
 
     //Таблица качества воды, присваивание data-label всем td для адаптива таблицы
-    function table() {
-        let qualityTablesTr = document.querySelectorAll('#qualityTable tr');
-        for (let qualityTableTr of qualityTablesTr) {
-            qualityTableTr.childNodes[1].dataset.label = 'Определяемый показатель';
-            qualityTableTr.childNodes[3].dataset.label = 'Единицы измерения';
-            qualityTableTr.childNodes[5].dataset.label = 'Значение';
-            qualityTableTr.childNodes[7].dataset.label = 'Норматив';
+    function tableAddDataset() {
+        let qualityTableTrs = document.querySelectorAll('#qualityTable tr');
+        for (let qualityTableTr of qualityTableTrs) {
+            qualityTableTr.childNodes[0].dataset.label = 'Определяемый показатель';
+            qualityTableTr.childNodes[1].dataset.label = 'Единицы измерения';
+            qualityTableTr.childNodes[2].dataset.label = 'Значение';
+            qualityTableTr.childNodes[3].dataset.label = 'Норматив';
         }
     }
 
