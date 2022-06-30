@@ -240,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     mapAddress.value = myPlacemark.properties._data['balloonContent'];
                     mapAddress.nextElementSibling.classList.add('placeholder__top');
                 });
-
             }
         }
     }
@@ -284,9 +283,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let inputPlaceholders = document.querySelectorAll('.input__placeholder');
     let txtPlaceholders = document.querySelectorAll('.form__input__placeholder');
 
-
     for (let inputPlaceholder of inputPlaceholders) {
-
         //Смещаем текст по фокусу
         inputPlaceholder.addEventListener('focus', function () {
             this.nextElementSibling.classList.add('placeholder__top');
@@ -320,7 +317,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
-    let fileList = document.querySelector('.form__input__file__list');
+    /* let fileList = document.querySelector('.form__input__file__list'); */
 
     for (let file of files) {
         //Выводим название файлов при изменении инпута
@@ -329,11 +326,16 @@ document.addEventListener('DOMContentLoaded', function () {
             for (let i = 0; i < file.files.length; i++) {
                 let li = document.createElement('li');
                 li.innerHTML = file.files[`${i}`].name + `<span class="file__delete__icon"></span>`;
-                fileList.appendChild(li);
+                if(file.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
+                    file.parentNode.parentNode.nextElementSibling.appendChild(li);
+                }
             }
             let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
             for (let deleteFileButton of deleteFileButtons) {
                 deleteFileButton.addEventListener('click', function (event) {
+
+                    console.log(file.files)
+                    file.value = '';
                     console.log(file.files)
                 })
             }
@@ -344,14 +346,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Аккордеон на странице контакты
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
-
     for (let contactsAccordBtn of contactsAccordBtns) {
         contactsAccordBtn.addEventListener('click', function () {
             contactsAccordBtn.childNodes[3].classList.toggle('contacts__accordeon-active');
             contactsAccordBtn.childNodes[1].childNodes[1].classList.toggle('aside__menu__rectangle-active');
         })
     }
-
 
     // Popups фото
     let photoOpeneds = document.querySelectorAll('.photo__opened');
