@@ -3310,6 +3310,16 @@ body {
     color: #0E1B30;
 }
 
+.quality__description__under__table {
+    visibility: hidden;
+    height: 0;
+}
+
+.quality__description__under__table-active {
+    visibility: visible;
+    height: auto;
+}
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);
