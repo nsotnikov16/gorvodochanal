@@ -334,8 +334,19 @@ document.addEventListener('DOMContentLoaded', function () {
                 popupPhoto.classList.remove('popup_opened');
                 popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = '';
             })
+
+            document.addEventListener('click', function (event) {
+                if ((popupPhoto.childNodes[1].childNodes[1].childNodes[1].src != '') && (event.target == popupPhoto)) {
+                    popupPhoto.classList.remove('popup_opened');
+                    popupPhoto.childNodes[1].childNodes[1].childNodes[1].src = '';
+                }
+            })
         })
     }
+
+
+
+
 
     //Табы в личном кабинете
     let individualBtn = document.querySelector('#individualBtn');
@@ -347,8 +358,8 @@ document.addEventListener('DOMContentLoaded', function () {
         individualBtn.addEventListener('click', function () {
             legalBtn.classList.remove('personal__area__active');
             individualBtn.classList.add('personal__area__active');
-            legalForm.classList.remove('personal__form__active')
-            individualForm.classList.add('personal__form__active')
+            legalForm.classList.remove('personal__form__active');
+            individualForm.classList.add('personal__form__active');
         })
     }
 
@@ -356,8 +367,8 @@ document.addEventListener('DOMContentLoaded', function () {
         legalBtn.addEventListener('click', function () {
             individualBtn.classList.remove('personal__area__active');
             legalBtn.classList.add('personal__area__active');
-            individualForm.classList.remove('personal__form__active')
-            legalForm.classList.add('personal__form__active')
+            individualForm.classList.remove('personal__form__active');
+            legalForm.classList.add('personal__form__active');
         })
     }
 
