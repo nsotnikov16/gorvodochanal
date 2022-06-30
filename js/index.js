@@ -84,8 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let btnHelps = document.querySelectorAll('.call__menu'); //кнопки открытия меню
     let menuHelp = document.querySelector('#menuHelp'); //меню
     let closeMenus = document.querySelectorAll('.help__close__menu'); //закрытие меню при нажатии на фон или крестик
-    let menuLinks = document.querySelectorAll('#menuHelp a'); // ссылки в меню
-    let menuDefault = menuHelp.innerHTML; //Контент меню по умолчанию
+    let menuLink = document.querySelector('#menuHelp'); // Контейнер ссылок для делегирования
+    let menuDefault = menuHelp.innerHTML; //Контент меню по умолчанию записыали в переменную
     let menuAsideHead = document.querySelector('#menuAsideHead'); //Заголовок "Быстрая помощь" в меню
 
     //Открыть меню
@@ -111,9 +111,9 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //Смена контента по клику на ссылку
-    for (let menuLink of menuLinks) {
-        menuLink.addEventListener('click', function (event) {
+    //Делигирование клика на ссылки и смена контента
+    menuLink.addEventListener('click', function (event) {
+        if (event.target.tagName === 'A') {
             event.preventDefault();
             menuAsideHead.style.visibility = "hidden";
             menuHelp.innerHTML = '<div class="menu__help__head"><span class="menu-aside__back-btn">&lt; Назад</span><button class="menu__close__icon help__close__menu" aria-label="Закрыть окно"></button></div>'
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
             menuBack.addEventListener('click', function () {
                 menuHelp.innerHTML = menuDefault;
             })
-        })
-    }
+        }
+    })
 
     //Подстановка меню в выпадающее меню
     let headerNav = document.querySelector('#headerNav');
@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', function () {
     menu.innerHTML = menu.innerHTML + headerDropdown.innerHTML;
 
 
-    //Аккордеон слева
+    //Аккордеон меню слева
     let links = document.querySelectorAll('.aside__menu__rectangle');
 
     for (let link of links) {
@@ -288,8 +288,6 @@ document.addEventListener('DOMContentLoaded', function () {
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
     let fileList = document.querySelector('.form__input__file__list');
-    let numberFiles = 0;
-    let sizeFiles = 0;
 
     for (let file of files) {
         //Выводим название файлов при изменении инпута
@@ -311,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-    //Аккордеон на странцие контакты
+    //Аккордеон на странице контакты
     let contactsAccordBtns = document.querySelectorAll('.contacts__accordeon__btn');
 
     for (let contactsAccordBtn of contactsAccordBtns) {
@@ -370,10 +368,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Маска телефона
 
-    let inputTel = document.querySelectorAll("input[type='tel']");
-    if (inputTel.length > 0) {
+    let inputTels = document.querySelectorAll("input[type='tel']");
+    if (inputTels.length > 0) {
         let im = new Inputmask("+7 (999)-999-99-99");
-        for (let tel of inputTel) {
+        for (let tel of inputTels) {
             im.mask(tel);
         }
     }
