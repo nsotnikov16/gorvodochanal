@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Открытие селекта
     for (let select of selects) {
-        select.addEventListener('click', function (event) {
+        select.addEventListener('click', function () {
             this.classList.toggle('open');
             this.classList.toggle('border');
             this.firstChild.nextElementSibling.firstChild.nextElementSibling.classList.toggle('open');
@@ -272,6 +272,13 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    //Выбор пункта из открытого селекта
+    for (let option of options) {
+        option.addEventListener('click', function (event) {
+            event.target.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
+        })
+    }
+
     // Валидация селекта
     /* for (let select of selects) {
         select.addEventListener('click', function() {
@@ -283,14 +290,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }) 
     } */
-
-    //Выбор пункта из открытого селекта
-    for (let option of options) {
-        option.addEventListener('click', function (event) {
-            event.target.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
-        })
-    }
-
 
 
     //смещение плейсхолдера инпута на границу
