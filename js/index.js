@@ -437,9 +437,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 'date':
                     check = this.value.includes('-');
                     break;
-                case 'docs':
-
-                    break;
                 case 'password':
                     check = this.value.length > 4;
                     break;
@@ -456,7 +453,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.classList.add('invalid');
             }
         })
+        
     }
+
+
 
 
     //Карта на странице качество воды

@@ -2133,7 +2133,7 @@ body {
     user-select: none;
     position: absolute;
     top: 16px;
-    left: 14px;
+    left: 10px;
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 400;
@@ -3118,6 +3118,10 @@ body {
     margin-bottom: 10px;
 }
 
+.connection__head {
+    margin-bottom: 0 !important;
+}
+
 .connection__form__top {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -3128,6 +3132,9 @@ body {
 .connection__file__head {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    gap: 20px;
 }
 
 .connection__file__head p {
@@ -3148,6 +3155,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .connection__file__item .form__input__file {
@@ -3168,6 +3176,10 @@ body {
     font-size: 16px;
     line-height: 24px;
     color: #667085;
+}
+
+.connection__file__name svg {
+    flex-shrink: 0;
 }
 
 .connection__file__contaner {
@@ -3585,6 +3597,15 @@ body {
 
 @media(max-width: 768px) {
 
+    .connection__bottom {
+        padding: 30px 15px 40px 15px;
+    }
+
+    .connection__form__top {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .page__not__found h1 {
         font-size: 20px;
         line-height: 22px;
@@ -3903,9 +3924,13 @@ body {
 
 @media(max-width: 470px) {
 
+    .form__input input {
+        font-size: 13px;
+    }
+
     .form__input__placeholder {
         font-size: 11px;
-        left: 5px;
+        left: 10px;
         padding-top: 4px;
     }
 
@@ -4038,5 +4063,16 @@ body {
     .form__input__file label {
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+@media(max-width: 375px) {
+    .connection__file__name {
+        font-size: 13px;
+        line-height: 15px;
+    }
+    
+    .form__input__file label {
+        font-size: 13px;
     }
 }
