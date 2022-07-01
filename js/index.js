@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Валдиация инпутов
     let validInputs = document.querySelectorAll('input[data-rule]');
     for (let validInput of validInputs) {
-        validInput.addEventListener('blur', function () {
+        validInput.addEventListener('input', function () {
             let rule = this.dataset.rule;
             let value = this.value;
             let check;
