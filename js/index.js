@@ -237,8 +237,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             // В качестве контента балуна задаем строку с адресом объекта.
                             balloonContent: firstGeoObject.getAddressLine()
                         });
+                    // Записываем в ипут адрес
                     mapAddress.value = myPlacemark.properties._data['balloonContent'];
                     mapAddress.nextElementSibling.classList.add('placeholder__top');
+                    mapAddress.classList.add('valid');
                 });
             }
         }
@@ -317,30 +319,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
-    /* let fileList = document.querySelector('.form__input__file__list'); */
-
+    let arrFiles = [];
+    //Выводим название файлов при изменении инпута
     for (let file of files) {
-        //Выводим название файлов при изменении инпута
-        file.addEventListener('input', function () {
-
+        file.addEventListener('input', function (event) {
             for (let i = 0; i < file.files.length; i++) {
+                arrFiles = Array.from(event.target.files);
+                console.log(arrFiles)
                 let li = document.createElement('li');
-                li.innerHTML = file.files[`${i}`].name + `<span class="file__delete__icon"></span>`;
-                if(file.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
+                li.innerHTML = file.files[`${i}`].name + `<span data-name="${file.files[i].name}" class="file__delete__icon"></span>`;
+                if (file.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
                     file.parentNode.parentNode.nextElementSibling.appendChild(li);
                 }
             }
             let deleteFileButtons = document.querySelectorAll('.file__delete__icon');
             for (let deleteFileButton of deleteFileButtons) {
                 deleteFileButton.addEventListener('click', function (event) {
-                    console.log(file.files)
-                    this.value = '';
+                    const { name } = event.target.dataset;
+                    arrFiles = arrFiles.filter(file => file.name !== name);
                     this.parentNode.innerHTML = '';
+                    console.log(arrFiles)
                 })
             }
         })
     }
-
 
 
     //Аккордеон на странице контакты
@@ -406,6 +408,54 @@ document.addEventListener('DOMContentLoaded', function () {
         for (let tel of inputTels) {
             im.mask(tel);
         }
+    }
+
+
+    //Валдиация инпутов
+    let validInputs = document.querySelectorAll('input[data-rule]');
+    for (let validInput of validInputs) {
+        validInput.addEventListener('blur', function () {
+            let rule = this.dataset.rule;
+            let value = this.value;
+            let check;
+            switch (rule) {
+                case 'text':
+                    check = this.value.length >= 1;
+                    break;
+                case 'number':
+                    check = /^\d+$/.test(value);
+                    break;
+                case 'email':
+                    check = (this.value.includes('@') && this.value.includes('.')) && this.value.length > 2;
+                    break;
+                case 'tel':
+                    check = (!this.value.includes('_') && this.value.includes(' '));
+                    break;
+                case 'inn':
+                    check = /^\d+$/.test(value) && this.value.length == 10;
+                    break;
+                case 'date':
+                    check = this.value.includes('-');
+                    break;
+                case 'docs':
+
+                    break;
+                case 'password':
+                    check = this.value.length > 4;
+                    break;
+                default: 
+                    check;
+                break;
+            }
+
+            if (check) {
+                this.classList.remove('invalid');
+                this.classList.add('valid');
+            } else {
+                this.classList.remove('valid');
+                this.classList.add('invalid');
+            }
+        })
     }
 
 

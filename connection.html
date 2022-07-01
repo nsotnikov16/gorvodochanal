@@ -657,34 +657,28 @@
                     <div class="connection__form__top">
                         <div class="connection__form__left">
                             <div class="form__input">
-                                <input class="input__placeholder" name="fio">
+                                <input data-rule="text" class="input__placeholder" name="fio">
                                 <div class="form__input__placeholder">
                                     ФИО<span>*</span>
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="tel" type="tel">
-                                <div class="form__input__placeholder">
-                                    Телефон<span>*</span>
-                                </div>
+                                <input data-rule="tel" name="tel" type="tel" placeholder="Телефон">
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="email" type="email">
+                                <input data-rule="email" class="input__placeholder" name="email" type="email">
                                 <div class="form__input__placeholder">
                                     Email
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="inn" type="text">
+                                <input data-rule="inn" class="input__placeholder" name="inn" type="text">
                                 <div class="form__input__placeholder">
                                     ИНН<span>*</span>
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="date" type="text">
-                                <div class="form__input__placeholder">
-                                    Дата<span>*</span>
-                                </div>
+                                <input data-rule="date" name="date" type="date">
                             </div>
                         </div>
                         <div class="connection__form__right">
@@ -707,19 +701,19 @@
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="street" type="text">
+                                <input data-rule="text" class="input__placeholder" name="street" type="text">
                                 <div class="form__input__placeholder">
                                     Улица<span>*</span>
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="home" type="text">
+                                <input data-rule="text" class="input__placeholder" name="home" type="text">
                                 <div class="form__input__placeholder">
                                     Дом<span>*</span>
                                 </div>
                             </div>
                             <div class="form__input">
-                                <input class="input__placeholder" name="flat" type="text">
+                                <input data-rule="number" class="input__placeholder" name="flat" type="text">
                                 <div class="form__input__placeholder">
                                     Номер квартиры
                                 </div>
@@ -746,7 +740,7 @@
                                 Заявление на получение ТУ
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-TY" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-TY" type="file" name="file">
                                 <label for="file-TY">Обзор</label>
                             </div>
                         </div>
@@ -762,7 +756,7 @@
                                 Копия паспорта
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-copy-passport" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-copy-passport" type="file" name="file">
                                 <label for="file-copy-passport">Обзор</label>
                             </div>
                         </div>
@@ -778,7 +772,7 @@
                                 ЭЦП заявителя
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-ecp-applicant" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-ecp-applicant" type="file" name="file">
                                 <label for="file-ecp-applicant">Обзор</label>
                             </div>
                         </div>
@@ -794,7 +788,7 @@
                                 Градостроительный план
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-buildcity-plan" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-buildcity-plan" type="file" name="file">
                                 <label for="file-buildcity-plan">Обзор</label>
                             </div>
                         </div>
@@ -810,7 +804,7 @@
                                 Топографическая карта участка
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-map-territory" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-map-territory" type="file" name="file">
                                 <label for="file-map-territory">Обзор</label>
                             </div>
                         </div>
@@ -826,14 +820,14 @@
                                 Нотариально заверенная копия
                             </div>
                             <div class="form__input__file">
-                                <input accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" multiple id="file-notarized-copy" type="file" name="file">
+                                <input data-rule="docs" accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" multiple id="file-notarized-copy" type="file" name="file">
                                 <label for="file-notarized-copy">Обзор</label>
                             </div>
                         </div>
                         <ul class="form__input__file__list"></ul>
                     </div>
                     <div class="form__input__checkbox">
-                        <input id="agree" type="checkbox" name="checkbox">
+                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
@@ -879,7 +873,7 @@
                             </ul>
                         </li>
                         <li>
-                            <b>Письма – согласия (оригиналы) собственников</b>
+                            <b>Письма – согласия (оригиналы) собственников</b><br>
                             Письма – согласия (оригиналы) собственников в случае, если земельный участок находится в
                             долевой
                             собственности.
@@ -890,19 +884,19 @@
                                 строительство.</b>
                         </li>
                         <li>
-                            <b>Ситуационный план расположения объекта</b>
+                            <b>Ситуационный план расположения объекта</b><br>
                             Ситуационный план расположения объекта с привязкой к территории населенного пункта.
                             Карта распечатывается из Интернет - ресурса Яндекс-карты, 2 ГИС.
                         </li>
                         <li>
-                            <b>Топографическая карта участка в масштабе 1:500</b>
+                            <b>Топографическая карта участка в масштабе 1:500</b><br>
                             Топографическая карта участка в масштабе 1:500 с указанием всех наземных и подземных
                             коммуникаций и сооружений, согласованная с эксплуатирующими организациями.
                             Документ можно получить в любой геодезической организации, имеющий лицензию на осуществление
                             данных работ.
                         </li>
                         <li>
-                            <b>Баланс водопотребления и водоотведения подключаемого объекта</b>
+                            <b>Баланс водопотребления и водоотведения подключаемого объекта</b><br>
                             Баланс водопотребления и водоотведения подключаемого объекта в период использования
                             максимальной
                             величины мощности (нагрузки) с указанием целей использования холодной воды и распределением
@@ -915,7 +909,7 @@
                             организации.
                         </li>
                         <li>
-                            <b>Градостроительный план земельного участка</b>
+                            <b>Градостроительный план земельного участка</b><br>
                             Градостроительный план земельного участка (при подключении линейного объекта - проект
                             планировки
                             территории и проект межевания территории), результаты инженерных изысканий либо ссылка на
@@ -923,7 +917,7 @@
                             размещаются соответствующие результаты инженерных изысканий.
                         </li>
                         <li>
-                            <b>Дополнительные документы</b>
+                            <b>Дополнительные документы</b><br>
                             Приведенный ниже перечень документов не является обязательным, но их предоставление ускорит
                             проверку всего пакета:
                             Доверенность, заверенная нотариусом, в случае, если заявитель представляет интересы
@@ -1114,6 +1108,7 @@
         </aside>
     </footer>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/inputmask.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

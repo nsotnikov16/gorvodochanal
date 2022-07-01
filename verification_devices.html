@@ -645,43 +645,43 @@
                         </div>
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" value="" name="street">
+                        <input data-rule="text" class="input__placeholder" value="" name="street">
                         <div class="form__input__placeholder">
                             Улица<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" value="" name="home">
+                        <input data-rule="text" class="input__placeholder" value="" name="home">
                         <div class="form__input__placeholder">
                             Дом<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
                         <input class="input__placeholder" name="flat">
-                        <div class="form__input__placeholder">
+                        <div data-rule="text" class="form__input__placeholder">
                             Номер квартиры
                         </div>
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" name="date">
-                        <div class="form__input__placeholder">
+                        <input data-rule="date" type="date" name="date">
+                        <!-- <div class="form__input__placeholder">
                             Дата<span>*</span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" name="fio">
+                        <input data-rule="text" class="input__placeholder" name="fio">
                         <div class="form__input__placeholder">
                             ФИО<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" name="tel" type="tel">
-                        <div class="form__input__placeholder">
+                        <input data-rule="tel" placeholder="Телефон" name="tel" type="tel">
+                        <!-- <div class="form__input__placeholder">
                             Телефон<span>*</span>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" name="email" type="email">
+                        <input data-rule="email" class="input__placeholder" name="email" type="email">
                         <div class="form__input__placeholder">
                             Email
                         </div>
@@ -694,7 +694,7 @@
                     </div>
                     <ul class="form__input__file__list"></ul>
                     <div class="form__input__checkbox">
-                        <input id="agree" type="checkbox" name="checkbox">
+                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
@@ -908,6 +908,7 @@
         </aside>
     </footer>
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script src="./js/inputmask.min.js"></script>
     <script src="./js/index.js"></script>
 </body>
 

@@ -3329,6 +3329,16 @@ body {
     padding-bottom: 20px;
 }
 
+.invalid {
+    border: 1px solid rgb(224, 64, 64) !important;
+    border-radius: 2px;
+}
+
+.valid {
+    border: 1px solid #1B2F78 !important;
+    border-radius: 2px;
+}
+
 @media(max-width: 1200px) {
     .services__entity__container {
         grid-template-columns: repeat(2, 1fr);

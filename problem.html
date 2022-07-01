@@ -212,22 +212,22 @@
                         </div>
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" value="" name="fio">
+                        <input data-rule="text" class="input__placeholder" value="" name="fio">
                         <div class="form__input__placeholder">
                             ФИО<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input id="mapAddress" class="input__placeholder" value="" name="address">
+                        <input data-rule="text" id="mapAddress" class="input__placeholder" value="" name="address">
                         <div class="form__input__placeholder">
                             Введите адрес или отметьте точку на карте<span>*</span>
                         </div>
                     </div>
                     <div class="form__input">
-                        <input name="tel" type="tel" placeholder="Телефон (начиная с телефонного кода)">
+                        <input data-rule="tel" name="tel" type="tel" placeholder="Телефон (начиная с телефонного кода)">
                     </div>
                     <div class="form__input">
-                        <input class="input__placeholder" name="email">
+                        <input data-rule="email" class="input__placeholder" name="email">
                         <div class="form__input__placeholder">
                             Email
                         </div>
@@ -241,14 +241,14 @@
                     </div>
                     <div>
                         <div class="form__input__file">
-                            <input multiple accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip" id="file-input" type="file" name="file">
+                            <input data-rule="docs" multiple accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" id="file-input" type="file" name="file">
                             <label for="file-input">Добавить файл</label>
                             <span>Не более 5 файлов и общим объёмом не более 25 мб</span>
                         </div>
                     </div>
                     <ul class="form__input__file__list"></ul>
                     <div class="form__input__checkbox">
-                        <input id="agree" type="checkbox" name="checkbox">
+                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
