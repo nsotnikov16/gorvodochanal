@@ -272,6 +272,18 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
+    // Валидация селекта
+    /* for (let select of selects) {
+        select.addEventListener('click', function() {
+            let selectValue = select.value; 
+            if(select.value === selectValue) {
+                select.classList.add('invalid');
+            } else {
+                select.classList.add('invalid');
+            }
+        }) 
+    } */
+
     //Выбор пункта из открытого селекта
     for (let option of options) {
         option.addEventListener('click', function (event) {
@@ -410,7 +422,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-
     //Валдиация инпутов
     let validInputs = document.querySelectorAll('input[data-rule]');
     for (let validInput of validInputs) {
@@ -440,9 +451,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 case 'password':
                     check = this.value.length > 4;
                     break;
-                default: 
+                default:
                     check;
-                break;
+                    break;
             }
 
             if (check) {
@@ -453,11 +464,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.classList.add('invalid');
             }
         })
-        
     }
-
-
-
 
     //Карта на странице качество воды
 
