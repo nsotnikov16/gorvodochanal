@@ -276,6 +276,9 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let option of options) {
         option.addEventListener('click', function (event) {
             event.target.parentNode.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
+            option.parentNode.parentNode.parentNode.classList.remove('open');
+            option.parentNode.parentNode.parentNode.classList.remove('border');
+            option.parentNode.parentNode.parentNode.firstChild.nextElementSibling.firstChild.nextElementSibling.classList.remove('open');
         })
     }
 
@@ -333,7 +336,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
-    
+
     //Выводим название файлов при изменении инпута
     for (let file of files) {
         let arrFiles = [];
