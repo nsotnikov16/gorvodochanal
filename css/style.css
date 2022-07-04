@@ -1968,9 +1968,9 @@ body {
     cursor: pointer;
 }
 
-/* .select__option input {
+.select__option input {
     display: none;
-} */
+}
 
 .select__option:hover {
     background-color: #D0D5DD;
