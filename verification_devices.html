@@ -666,15 +666,12 @@
                     </div>
                     <div class="form__input">
                         <input class="input__placeholder" name="flat">
-                        <div data-rule="text" class="form__input__placeholder">
+                        <div class="form__input__placeholder">
                             Номер квартиры
                         </div>
                     </div>
                     <div class="form__input">
                         <input data-rule="date" type="date" name="date">
-                        <!-- <div class="form__input__placeholder">
-                            Дата<span>*</span>
-                        </div> -->
                     </div>
                     <div class="form__input">
                         <input data-rule="text" class="input__placeholder" name="fio">
@@ -684,9 +681,6 @@
                     </div>
                     <div class="form__input">
                         <input data-rule="tel" placeholder="Телефон" name="tel" type="tel">
-                        <!-- <div class="form__input__placeholder">
-                            Телефон<span>*</span>
-                        </div> -->
                     </div>
                     <div class="form__input">
                         <input data-rule="email" class="input__placeholder" name="email" type="email">
@@ -702,14 +696,14 @@
                     </div>
                     <ul class="form__input__file__list"></ul>
                     <div class="form__input__checkbox">
-                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
+                        <input id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
                             с <a href="#"> политикой конфинденциальности</a>.
                         </label>
                     </div>
-                    <button type="submit">
+                    <button class="form__submit" type="submit">
                         Отправить
                     </button>
                 </form>

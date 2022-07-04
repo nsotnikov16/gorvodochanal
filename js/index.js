@@ -282,22 +282,6 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-
-
-
-    // Валидация селекта
-    /* for (let select of selects) {
-        select.addEventListener('click', function() {
-            let selectValue = select.value; 
-            if(select.value === selectValue) {
-                select.classList.add('invalid');
-            } else {
-                select.classList.add('invalid');
-            }
-        }) 
-    } */
-
-
     //смещение плейсхолдера инпута на границу
     let inputPlaceholders = document.querySelectorAll('.input__placeholder');
     let txtPlaceholders = document.querySelectorAll('.form__input__placeholder');
@@ -336,14 +320,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
+    const arrInputsFile = []
+    files.forEach((input, index) => {
+        arrInputsFile.push({ input, files: [], trashs: [] })
+        input.addEventListener('input', ({ target }) => {
+
+            if (arrInputsFile[index].files.length == 0) {
+                arrInputsFile[index].files = Array.from(target.files)
+            } else {
+                arrInputsFile[index].files = [...arrInputsFile[index].files, ...Array.from(target.files)]
+            }
+
+            input.parentNode.parentNode.nextElementSibling.innerHTML = ''
+            arrInputsFile[index].files.forEach((item, ind) => {
+                let li = document.createElement('li');
+                li.innerHTML = item.name + `<span data-name="${item.name}" class="file__delete__icon"></span>`;
+                if (input.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
+                    input.parentNode.parentNode.nextElementSibling.appendChild(li);
+                }
+            })
+
+            let deleteFileButtons = input.parentNode.parentNode.nextElementSibling.querySelectorAll('.file__delete__icon');
+            deleteFileButtons.forEach(del => {
+                del.addEventListener('click', function (event) {
+                    const { name, id } = event.target.dataset;
+                    arrInputsFile[index].files = arrInputsFile[index].files.filter((file, i) => file.name !== name);
+                    this.parentNode.remove();
+                })
+            })
+
+        })
+    })
+    /*  console.log(arrInputsFile) */
+
 
     //Выводим название файлов при изменении инпута
-    for (let file of files) {
+    /* for (let file of files) {
+        
         let arrFiles = [];
         file.addEventListener('input', function (event) {
             for (let i = 0; i < file.files.length; i++) {
                 arrFiles = Array.from(event.target.files);
-                console.log(file.files)
+                console.log(arrFiles)
                 let li = document.createElement('li');
                 li.innerHTML = file.files[`${i}`].name + `<span data-name="${file.files[i].name}" class="file__delete__icon"></span>`;
                 if (file.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
@@ -356,11 +374,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     const { name } = event.target.dataset;
                     arrFiles = arrFiles.filter(file => file.name !== name);
                     this.parentNode.innerHTML = '';
-                    /* console.log(arrFiles) */
+                    console.log(arrFiles)
                 })
             }
         })
-    }
+    } */
 
 
     //Аккордеон на странице контакты
@@ -430,6 +448,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Валдиация инпутов
     let validInputs = document.querySelectorAll('input[data-rule]');
+    let buttonSubmits = document.querySelectorAll('.form__submit');
+    let checkAgree = document.querySelector('input[type="checkbox"]');
     for (let validInput of validInputs) {
         validInput.addEventListener('input', function () {
             let rule = this.dataset.rule;
@@ -461,7 +481,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     check;
                     break;
             }
-
             if (check) {
                 this.classList.remove('invalid');
                 this.classList.add('valid');
@@ -472,8 +491,73 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //Карта на странице качество воды
+    // Валидация селекта
+    let inputSelects = document.querySelectorAll('input[type="radio"]');
+    for (let select of selects) {
+        select.addEventListener('click', function (event) {
+            for (let inputSelect of inputSelects) {
+                if (inputSelect.checked) {
+                    select.classList.add('valid');
+                }
+            }
+        })
+    }
 
+    //Проверка всех полей на валидность
+    for (let buttonSubmit of buttonSubmits) {
+        buttonSubmit.addEventListener('click', function (event) {
+            event.preventDefault();
+            let ch = 0;
+            let chs = 0;
+            if (selects.length == 1) {
+                for (let inputSelect of inputSelects) {
+                    if (inputSelect.checked) {
+                        chs++;
+                    }
+                    if (chs != 1) {
+                        inputSelect.parentNode.parentNode.parentNode.classList.add('invalid');
+                    }
+                }
+            }
+            if (selects.length == 2) {
+                for (let inputSelect of inputSelects) {
+                    if (inputSelect.checked) {
+                        chs++;
+                    }
+                    if (chs != 2) {
+                        inputSelect.parentNode.parentNode.parentNode.classList.add('invalid');
+                    }
+                }
+            }
+            for (let validInput of validInputs) {
+                if (validInput.classList.contains('valid')) {
+                    ch++;
+                } else {
+                    validInput.classList.add('invalid');
+                }
+            }
+            switch (selects.length) {
+                case 1:
+                    if ((ch == validInputs.length) && checkAgree.checked && chs == 1) {
+                        console.log('valid');
+                    } else {
+                        console.log('invalid')
+                    }
+                    break;
+                case 2:
+                    if ((ch == validInputs.length) && checkAgree.checked && chs == 2) {
+                        console.log('valid');
+                    } else {
+                        console.log('invalid')
+                    }
+                break;
+            }
+        })
+    }
+
+
+
+    //Карта на странице качество воды
 
     if (document.getElementById('mapQuality')) {
         ymaps.ready(init);

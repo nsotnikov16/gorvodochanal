@@ -652,7 +652,7 @@
             <div class="transmission__bottom">
                 <form autocomplete="off" action="#" method="POST" class="problem__form">
                     <div class="form__input">
-                        <input data-rule="text" class="input__placeholder" value="" name="personal-account" aria-label="Лицевой счёт">
+                        <input data-rule="number" class="input__placeholder" value="" name="personal-account" aria-label="Лицевой счёт">
                         <div class="form__input__placeholder">
                             Лицевой счёт<span>*</span>
                         </div>
@@ -664,14 +664,14 @@
                         </div>
                     </div>
                     <div class="form__input__checkbox">
-                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
+                        <input id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
                             с <a href="#"> политикой конфинденциальности</a>.
                         </label>
                     </div>
-                    <button type="submit">
+                    <button class="form__submit" type="submit">
                         Отправить
                     </button>
                 </form>

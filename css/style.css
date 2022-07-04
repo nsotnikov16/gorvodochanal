@@ -3248,6 +3248,11 @@ body {
     list-style-type: disc;
 }
 
+/* .form__submit {
+    opacity: 0.6;
+    cursor: not-allowed !important;
+} */
+
 /* connection page end */
 
 #mapQuality {

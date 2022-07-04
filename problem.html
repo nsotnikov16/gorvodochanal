@@ -234,7 +234,6 @@
                             Email
                         </div>
                     </div>
-
                     <div class="form__input">
                         <textarea class="input__placeholder" name="comment"></textarea>
                         <div class="form__input__placeholder">
@@ -243,21 +242,21 @@
                     </div>
                     <div>
                         <div class="form__input__file">
-                            <input data-rule="docs" multiple accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" id="file-input" type="file" name="file">
+                            <input multiple accept=".jpg,.jpeg,.png,.doc,.pdf,.rar,.zip,.docx" id="file-input" type="file" name="file">
                             <label for="file-input">Добавить файл</label>
                             <span>Не более 5 файлов и общим объёмом не более 25 мб</span>
                         </div>
                     </div>
                     <ul class="form__input__file__list"></ul>
                     <div class="form__input__checkbox">
-                        <input data-rule="checkbox" id="agree" type="checkbox" name="checkbox">
+                        <input id="agree" type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Даю согласие на обработку персональных данных и соглашаюсь
                             с <a href="#"> политикой конфинденциальности</a>.
                         </label>
                     </div>
-                    <button type="submit">
+                    <button class="form__submit" type="submit">
                         Отправить
                     </button>
                 </form>
