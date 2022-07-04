@@ -252,7 +252,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* Селект на странице проблемы */
     let selects = document.querySelectorAll('.select');
-    let options = document.querySelectorAll('.select__option');
+    let options = document.querySelectorAll('.select__option label');
 
     //Открытие селекта
     for (let select of selects) {
@@ -275,9 +275,12 @@ document.addEventListener('DOMContentLoaded', function () {
     //Выбор пункта из открытого селекта
     for (let option of options) {
         option.addEventListener('click', function (event) {
-            event.target.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
+            event.target.parentNode.parentNode.previousElementSibling.firstChild.innerHTML = option.innerHTML;
         })
     }
+
+
+
 
     // Валидация селекта
     /* for (let select of selects) {
@@ -330,13 +333,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Показ файлов выбранных для загрузки 
     let files = document.querySelectorAll('.form__input__file input[type="file"]');
-    let arrFiles = [];
+    
     //Выводим название файлов при изменении инпута
     for (let file of files) {
+        let arrFiles = [];
         file.addEventListener('input', function (event) {
             for (let i = 0; i < file.files.length; i++) {
                 arrFiles = Array.from(event.target.files);
-                console.log(arrFiles)
+                console.log(file.files)
                 let li = document.createElement('li');
                 li.innerHTML = file.files[`${i}`].name + `<span data-name="${file.files[i].name}" class="file__delete__icon"></span>`;
                 if (file.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
@@ -349,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     const { name } = event.target.dataset;
                     arrFiles = arrFiles.filter(file => file.name !== name);
                     this.parentNode.innerHTML = '';
-                    console.log(arrFiles)
+                    /* console.log(arrFiles) */
                 })
             }
         })

@@ -1958,9 +1958,19 @@ body {
     line-height: 150%;
     color: #667085;
     cursor: pointer;
-    padding: 14px;
+   /*  padding: 14px; */
     transition: 0.2s ease-in-out;
 }
+
+.select__label {
+    padding: 14px;
+    display: block;
+    cursor: pointer;
+}
+
+/* .select__option input {
+    display: none;
+} */
 
 .select__option:hover {
     background-color: #D0D5DD;
