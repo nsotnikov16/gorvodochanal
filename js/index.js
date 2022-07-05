@@ -426,7 +426,6 @@ document.addEventListener('DOMContentLoaded', function () {
             individualForm.classList.add('personal__form__active');
         })
     }
-
     if (legalBtn) {
         legalBtn.addEventListener('click', function () {
             individualBtn.classList.remove('personal__area__active');
@@ -437,7 +436,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     //Маска телефона
-
     let inputTels = document.querySelectorAll("input[type='tel']");
     if (inputTels.length > 0) {
         let im = new Inputmask("+7 (999)-999-99-99");
@@ -449,7 +447,7 @@ document.addEventListener('DOMContentLoaded', function () {
     //Валдиация инпутов
     let validInputs = document.querySelectorAll('input[data-rule]');
     let buttonSubmits = document.querySelectorAll('.form__submit');
-    let checkAgree = document.querySelector('input[type="checkbox"]');
+    let checkAgree = document.querySelector('input[type="checkbox"][data-agree]');
     for (let validInput of validInputs) {
         validInput.addEventListener('input', function () {
             let rule = this.dataset.rule;
@@ -507,36 +505,92 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let buttonSubmit of buttonSubmits) {
         buttonSubmit.addEventListener('click', function (event) {
             event.preventDefault();
-            let ch = 0;
-            let chs = 0;
+            let validInputCounter = 0;
+            let selectCount = 0;
+            // Если есть селекты на странице то валидируем их
             if (selects.length > 0) {
                 for (let select of selects) {
                     if(select.classList.contains('valid')) {
-                        chs++;
+                        selectCount++;
                     } else {
-                        select.classList.add('invalid')
+                        select.classList.add('invalid');
                     }
                 }
             }
+            // Проверка полей на валидность
             for (let validInput of validInputs) {
                 if (validInput.classList.contains('valid')) {
-                    ch++;
+                    validInputCounter++;
                 } else {
                     validInput.classList.add('invalid');
                 }
             }
-            if ((ch == validInputs.length) && checkAgree.checked && chs == selects.length) {
-                console.log('valid');
+            if(checkAgree) { //Если чекбокс согласия присутствуют, то он учитываются при валидации, иначе нет
+                if ((validInputCounter == validInputs.length) && checkAgree.checked && selectCount == selects.length) {
+                    console.log('valid');
+                } else {
+                    console.log('invalid');
+                }
             } else {
-                console.log('invalid')
+                if ((validInputCounter == validInputs.length) && selectCount == selects.length) {
+                    console.log('valid');
+                } else {
+                    console.log('invalid');
+                }
             }
         })
     }
 
 
+    // Валидация входа в личный кабинет
+    let submitIndividualArea = document.querySelector('#submitIndividualArea');
+    let submitLegalArea = document.querySelector('#submitLegalArea');
+    
+    // Частные лица
+    if(submitIndividualArea) {
+        let inputIndividualForms = individualForm.querySelectorAll('input');
+        let validInputCounter = 0;
+        submitIndividualArea.addEventListener('click', (event) => {
+            event.preventDefault();
+            for(let inputIndividualForm of inputIndividualForms) {
+                if(inputIndividualForm.classList.contains('valid')) {
+                    validInputCounter++;
+                }else {
+                    inputIndividualForm.classList.add('invalid');
+                }
+            }
+            if ((validInputCounter == (validInputs.length - 2))) {
+                console.log('valid');
+            } else {
+                console.log('invalid');
+            }
+        })
+    }
+
+    // Юр.лица
+    if(submitLegalArea) {
+        let inputLegalForms = legalForm.querySelectorAll('input');
+        let validInputCounter = 0;
+        submitLegalArea.addEventListener('click', (event) => {
+            event.preventDefault();
+            for(let inputLegalForm of inputLegalForms) {
+                if(inputLegalForm.classList.contains('valid')) {
+                    validInputCounter++;
+                } else {
+                    inputLegalForm.classList.add('invalid');
+                }
+            }
+            if ((validInputCounter == (validInputs.length - 2))) {
+                console.log('valid');
+            } else {
+                console.log('invalid');
+            }
+        })
+    }
+    
+    
 
     //Карта на странице качество воды
-
     if (document.getElementById('mapQuality')) {
         ymaps.ready(init);
 
@@ -545,7 +599,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 center: [61.287350, 73.40980],
                 zoom: 11
             });
-
 
             // Создаем многоугольник, используя класс GeoObject.
             var northernIndustrialArea = new ymaps.GeoObject({
@@ -1138,6 +1191,4 @@ document.addEventListener('DOMContentLoaded', function () {
             qualityTableTr.childNodes[3].dataset.label = 'Норматив';
         }
     }
-
-
 })

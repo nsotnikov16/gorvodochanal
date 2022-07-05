@@ -219,13 +219,13 @@
                             Не выходить из системы
                         </label>
                     </div>
-                    <button type="submit">
+                    <button id="submitIndividualArea" type="submit">
                         Войти
                     </button>
                 </form>
                 <form id="legalForm" autocomplete="off" action="#" method="POST" class="problem__form legal__form">
                     <div class="form__input">
-                        <input data-rule="inn" class="input__placeholder" value="" name="inn" aria-label="ИНН">
+                        <input maxlength="10" data-rule="inn" class="input__placeholder" value="" name="inn" aria-label="ИНН">
                         <div class="form__input__placeholder">
                             ИНН
                         </div>
@@ -237,13 +237,13 @@
                         </div>
                     </div>
                     <div class="form__input__checkbox">
-                        <input  type="checkbox" name="checkbox">
+                        <input type="checkbox" name="checkbox">
                         <span class="form__input__checkbox__span"></span>
                         <label for="agree">
                             Не выходить из системы
                         </label>
                     </div>
-                    <button class="form__submit" type="submit">
+                    <button id="submitLegalArea" type="submit">
                         Войти
                     </button>
                 </form>
