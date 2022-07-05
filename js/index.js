@@ -510,16 +510,13 @@ document.addEventListener('DOMContentLoaded', function () {
             let ch = 0;
             let chs = 0;
             if (selects.length > 0) {
-                for (let inputSelect of inputSelects) {
-                    if (inputSelect.checked) {
+                for (let select of selects) {
+                    if(select.classList.contains('valid')) {
                         chs++;
-                    }
-                    if (chs != 1) {
-                        inputSelect.parentNode.parentNode.parentNode.classList.add('invalid');
+                    } else {
+                        select.classList.add('invalid')
                     }
                 }
-            } else {
-                chs = 1;
             }
             for (let validInput of validInputs) {
                 if (validInput.classList.contains('valid')) {
@@ -528,7 +525,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     validInput.classList.add('invalid');
                 }
             }
-            if ((ch == validInputs.length) && checkAgree.checked && chs == 1) {
+            if ((ch == validInputs.length) && checkAgree.checked && chs == selects.length) {
                 console.log('valid');
             } else {
                 console.log('invalid')
