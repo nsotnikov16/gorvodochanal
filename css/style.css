@@ -1920,7 +1920,7 @@ body {
     transition: 0.3s;
 }
 
-.select a {
+.select div {
     font-family: 'Cera Pro';
     font-style: normal;
     font-weight: 400;
@@ -3953,7 +3953,7 @@ body {
         font-size: 11px;
     }
 
-    .select a {
+    .select div {
         font-size: 11px;
     }
 

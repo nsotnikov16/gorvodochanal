@@ -509,7 +509,7 @@ document.addEventListener('DOMContentLoaded', function () {
             event.preventDefault();
             let ch = 0;
             let chs = 0;
-            if (selects.length == 1) {
+            if (selects.length > 0) {
                 for (let inputSelect of inputSelects) {
                     if (inputSelect.checked) {
                         chs++;
@@ -518,16 +518,8 @@ document.addEventListener('DOMContentLoaded', function () {
                         inputSelect.parentNode.parentNode.parentNode.classList.add('invalid');
                     }
                 }
-            }
-            if (selects.length == 2) {
-                for (let inputSelect of inputSelects) {
-                    if (inputSelect.checked) {
-                        chs++;
-                    }
-                    if (chs != 2) {
-                        inputSelect.parentNode.parentNode.parentNode.classList.add('invalid');
-                    }
-                }
+            } else {
+                chs = 1;
             }
             for (let validInput of validInputs) {
                 if (validInput.classList.contains('valid')) {
@@ -536,21 +528,10 @@ document.addEventListener('DOMContentLoaded', function () {
                     validInput.classList.add('invalid');
                 }
             }
-            switch (selects.length) {
-                case 1:
-                    if ((ch == validInputs.length) && checkAgree.checked && chs == 1) {
-                        console.log('valid');
-                    } else {
-                        console.log('invalid')
-                    }
-                    break;
-                case 2:
-                    if ((ch == validInputs.length) && checkAgree.checked && chs == 2) {
-                        console.log('valid');
-                    } else {
-                        console.log('invalid')
-                    }
-                break;
+            if ((ch == validInputs.length) && checkAgree.checked && chs == 1) {
+                console.log('valid');
+            } else {
+                console.log('invalid')
             }
         })
     }
