@@ -1649,7 +1649,7 @@ body {
     align-items: center
 }
 
-.asside__menu__content li:hover {
+.asside__menu__content a:hover {
     background-color: rgba(14, 27, 48, 0.1);
     transition: 0.3s ease-in-out;
 }
@@ -1668,8 +1668,12 @@ body {
     justify-content: space-between;
     cursor: pointer;
     position: relative;
-    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    /* border-bottom: 1px solid rgba(14, 27, 48, 0.1); */
     min-height: 25px;
+}
+
+.asside__first-level {
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
 }
 
 .asside__menu__head__button a {
@@ -1690,9 +1694,22 @@ body {
     position: relative;
 }
 
+.asside__menu__head__button__second-level a:hover {
+    background-color: transparent;
+}
+
 .asside__menu__content__second-level a {
     padding-left: 40px;
     display: flex;
+}
+
+.asside__menu__head .active .asside__menu__head__button__second-level {
+    border-bottom: 1px solid rgba(14, 27, 48, 0.1);
+    transition: 0s;
+}
+
+.asside__menu__content__third-level li:last-child {
+    border-bottom: none;
 }
 
 .aside__menu__rectangle {
