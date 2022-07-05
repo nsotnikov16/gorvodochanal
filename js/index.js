@@ -77,15 +77,13 @@ document.addEventListener('DOMContentLoaded', function () {
         this.classList.toggle('opened');
     }
 
-
-
     //Выезжающее меню при нажатии на кнопку "помощь"
     let helpBackground = document.querySelector('#helpBackground'); //затемненный фон
     let btnHelps = document.querySelectorAll('.call__menu'); //кнопки открытия меню
     let menuHelp = document.querySelector('#menuHelp'); //меню
     let closeMenus = document.querySelectorAll('.help__close__menu'); //закрытие меню при нажатии на фон или крестик
     let menuLink = document.querySelector('#menuHelp'); // Контейнер ссылок для делегирования
-    let menuDefault = menuHelp.innerHTML; //Контент меню по умолчанию записыали в переменную
+    let menuDefault = menuHelp.innerHTML; //Контент меню по умолчанию, записывается в переменную
     let menuAsideHead = document.querySelector('#menuAsideHead'); //Заголовок "Быстрая помощь" в меню
 
     //Открыть меню
@@ -250,7 +248,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let mapAddress = document.querySelector('#mapAddress');
 
-    /* Селект на странице проблемы */
+    /* Селекты */
     let selects = document.querySelectorAll('.select');
     let options = document.querySelectorAll('.select__option label');
 
@@ -348,7 +346,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     this.parentNode.remove();
                 })
             })
-
         })
     })
     /*  console.log(arrInputsFile) */
@@ -501,7 +498,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 
-    //Проверка всех полей на валидность
+    //Проверка всех полей на валидность перед отправкой
     for (let buttonSubmit of buttonSubmits) {
         buttonSubmit.addEventListener('click', function (event) {
             event.preventDefault();
