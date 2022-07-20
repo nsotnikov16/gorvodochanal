@@ -317,37 +317,69 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     //Показ файлов выбранных для загрузки 
-    let files = document.querySelectorAll('.form__input__file input[type="file"]');
-    const arrInputsFile = []
-    files.forEach((input, index) => {
-        arrInputsFile.push({ input, files: [], trashs: [] })
-        input.addEventListener('input', ({ target }) => {
+     //Показ файлов выбранных для загрузки 
+     class File {
+        constructor(input, index) {
+            this._input = input
+            this._list = document.querySelector(`[data-input="${index}"]`)
+            this._accept = input.getAttribute('accept')
+            this._size = Number(input.dataset.size) * 1024 * 1024
+            this._sizeCounter = 0
+            this._files = []
+            this._multiple = Number(input.dataset.multiple)
+            this._input.addEventListener('change', () => {
+                this._files.length == 0 ? this._files = Array.from(this._input.files) : this._files = [...this._files, ...this._input.files]
 
-            if (arrInputsFile[index].files.length == 0) {
-                arrInputsFile[index].files = Array.from(target.files)
-            } else {
-                arrInputsFile[index].files = [...arrInputsFile[index].files, ...Array.from(target.files)]
-            }
+                this._list.innerHTML = ''
 
-            input.parentNode.parentNode.nextElementSibling.innerHTML = ''
-            arrInputsFile[index].files.forEach((item, ind) => {
-                let li = document.createElement('li');
-                li.innerHTML = item.name + `<span data-name="${item.name}" class="file__delete__icon"></span>`;
-                if (input.parentNode.parentNode.nextElementSibling.tagName == 'UL') {
-                    input.parentNode.parentNode.nextElementSibling.appendChild(li);
-                }
-            })
+                if (this._multiple && this._files.length > this._multiple) return this.checkCounter()
 
-            let deleteFileButtons = input.parentNode.parentNode.nextElementSibling.querySelectorAll('.file__delete__icon');
-            deleteFileButtons.forEach(del => {
-                del.addEventListener('click', function (event) {
-                    const { name, id } = event.target.dataset;
-                    arrInputsFile[index].files = arrInputsFile[index].files.filter((file, i) => file.name !== name);
-                    this.parentNode.remove();
+                this._files.forEach(item => this._sizeCounter += item.size)
+
+                if (this._sizeCounter > this._size) return this.checkSize()
+
+                this._files.forEach(item => {
+                    this._sizeCounter += item.size
+                    this.checkFormat(item.name)
                 })
+
+                const deleteIcons = this._list.querySelectorAll('.file__delete__icon')
+                deleteIcons.forEach(icon => icon.addEventListener('click', () => {
+                    this._files = this._files.filter(item => item.name !== icon.dataset.name)
+                    icon.parentNode.remove()
+                }))
+
+                const noFormats = this._list.querySelectorAll('.file__no-format')
+                if (noFormats.length > 0) noFormats.forEach(no => setTimeout(() => no.remove(), 3000))
+
             })
-        })
-    })
+        }
+
+        checkFormat(fileName) {
+            const indexLastPoint = fileName.lastIndexOf('.')
+            const type = fileName.split('').splice(indexLastPoint + 1, fileName.length - indexLastPoint).join('')
+            if (!this._accept.includes(type)) {
+                this._list.insertAdjacentHTML('beforeend', `<li class="file__no-format" style="color: red">Неподходящий формат для файла: ${fileName}</li>`)
+                this._files = this._files.filter(item => item.name !== fileName)
+            } else {
+                this._list.insertAdjacentHTML('beforeend', `<li>${fileName} <span data-name="${fileName}" class="file__delete__icon"></span></li>`)
+            }
+        }
+
+        checkSize() {
+            this._list.innerHTML = `<li style="color: red"><b>Объем превышен указанного лимита<b></li>`
+            this._files = []
+            this._sizeCounter = 0
+        }
+
+        checkCounter() {
+            this._list.innerHTML = `<li style="color: red"><b>Максимальное количество файлов: ${this._multiple}<b></li>`
+            this._files = []
+        }
+    }
+    let files = document.querySelectorAll('.form__input__file input[type="file"]');
+    let fileLists = document.querySelectorAll('.form__input__file__list')
+    if (files.length > 0) files.forEach((file, index) => { fileLists[index].setAttribute('data-input', index); new File(file, index); })
     /*  console.log(arrInputsFile) */
 
 
